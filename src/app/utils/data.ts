@@ -29,6 +29,10 @@ export const projectsData: projectType[] = [
 
 export const skillsData = [
   {
+    img: 'java/java-original.svg',
+    name: 'Java'
+  },
+  {
     img: 'python/python-original.svg',
     name: 'Python'
   },
@@ -41,8 +45,28 @@ export const skillsData = [
     name: 'C'
   },
   {
+    img: 'javascript/javascript-original.svg',
+    name: 'JavaScript'
+  },
+  {
     img: 'mongodb/mongodb-original.svg',
     name: 'MongoDB'
+  },
+  {
+    img: 'mariadb/mariadb-original.svg',
+    name: 'MariaDB'
+  },
+  {
+    img: 'oracle/oracle-original.svg',
+    name: 'Oracle'
+  },
+  {
+    img: 'azure/azure-original.svg',
+    name: 'Azure'
+  },
+  {
+    img: 'googlecloud/googlecloud-original.svg',
+    name: 'Google Cloud Platform'
   },
   {
     img: 'html5/html5-original.svg',
@@ -53,36 +77,28 @@ export const skillsData = [
     name: 'CSS'
   },
   {
-    img: 'javascript/javascript-original.svg',
-    name: 'JavaScript'
+    img: 'react/react-original.svg',
+    name: 'React'
   },
   {
-    img: 'solidity/solidity-original.svg',
-    name: 'Solidity'
-  },
-  {
-    img: 'git/git-original.svg',
-    name: 'Git'
-  },
-  {
-    img: 'nodejs/nodejs-original.svg',
-    name: 'Node.js'
-  },
-  {
-    img: 'googlecloud/googlecloud-original.svg',
-    name: 'Google Cloud'
+    img: 'angular/angular-original.svg',
+    name: 'Angular'
   },
   {
     img: 'tensorflow/tensorflow-original.svg',
     name: 'TensorFlow'
   },
   {
-    img: 'mysql/mysql-original.svg',
-    name: 'MySQL'
+    img: 'scikitlearn/scikitlearn-original.svg',
+    name: 'scikit-learn'
   },
   {
-    img: 'oracle/oracle-original.svg',
-    name: 'Oracle'
+    img: 'keras/keras-original.svg',
+    name: 'Keras'
+  },
+  {
+    img: 'pytorch/pytorch-original.svg',
+    name: 'PyTorch'
   },
   {
     img: 'selenium/selenium-original.svg',
