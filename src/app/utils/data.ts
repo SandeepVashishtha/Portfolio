@@ -24,6 +24,15 @@ export const projectsData: projectType[] = [
       'https://i.ibb.co/b69XhBD/Screenshot-2023-07-11-at-22-26-22-REST-Countries-API.png',
     description: '#',
     Skills: ['react', 'typescript', 'styled-components', 'axios', 'api']
+  },
+  {
+    name: '#',
+    repo: '#',
+    url: '#',
+    image:
+      'https://i.ibb.co/b69XhBD/Screenshot-2023-07-11-at-22-26-22-REST-Countries-API.png',
+    description: '#',
+    Skills: ['react', 'typescript', 'styled-components', 'axios', 'api']
   }
 ]
 
