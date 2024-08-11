@@ -17,13 +17,13 @@ export type projectType = {
 
 export const projectsData: projectType[] = [
   {
-    name: '#',
+    name: 'Online Code-Editor',
     repo: '#',
     url: '#',
     image:
       'https://i.ibb.co/b69XhBD/Screenshot-2023-07-11-at-22-26-22-REST-Countries-API.png',
     description: '#',
-    Skills: ['react', 'typescript', 'styled-components', 'axios', 'api']
+    Skills: ['MERN', 'node.js', 'Monoco Editor']
   },
   {
     name: '#',
