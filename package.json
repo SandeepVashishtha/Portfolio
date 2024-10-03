@@ -19,6 +19,7 @@
     "eslint-config-next": "13.4.19",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.274.0",
+    "my-portfolio": "file:",
     "next": "13.4.19",
     "next-themes": "^0.2.1",
     "postcss": "8.4.29",

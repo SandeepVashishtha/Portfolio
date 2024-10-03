@@ -31,7 +31,7 @@ export const EmailBtn = () => {
       </span>
       {copied && (
         <div className="absolute left-0 top-0 z-20 flex h-full w-full items-center justify-center bg-green-500 text-white">
-          Copy
+          Copied
         </div>
       )}
     </button>

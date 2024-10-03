@@ -18,10 +18,9 @@ export type projectType = {
 export const projectsData: projectType[] = [
   {
     name: 'Online Code-Editor',
-    repo: '#',
-    url: '#',
-    image:
-      '/../public/code-editor.png',
+    repo: 'https://github.com/SandeepVashishtha/Code-Editor',
+    url: 'https://github.com/SandeepVashishtha/Code-Editor',
+    image: '/../public/code-editor.png',
     description: '#',
     Skills: ['MERN', 'node.js', 'Monoco Editor']
   },
