@@ -21,7 +21,7 @@ export const projectsData: projectType[] = [
     repo: '#',
     url: '#',
     image:
-      'https://i.ibb.co/b69XhBD/Screenshot-2023-07-11-at-22-26-22-REST-Countries-API.png',
+      '/../public/code-editor.png',
     description: '#',
     Skills: ['MERN', 'node.js', 'Monoco Editor']
   },
