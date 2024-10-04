@@ -4,9 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'i.ibb.co',
+        hostname: 'drive.google.com',
         port: '',
-        pathname: '/**/**'
+        pathname: '/file/d/**'
       }
     ]
   }
