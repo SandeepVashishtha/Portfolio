@@ -20,7 +20,7 @@ export const projectsData: projectType[] = [
     name: 'Online Code-Editor',
     repo: 'https://github.com/SandeepVashishtha/Code-Editor',
     url: 'https://github.com/SandeepVashishtha/Code-Editor',
-    image: '/Code-editor.png',
+    image: '/code-editor.png',
     description:
       'A web-based real-time code editor that supports collaborative coding. Built using the MERN stack, with Monaco Editor for syntax highlighting and real-time updates via WebSockets.',
     Skills: ['MERN', 'Node.js', 'Monaco Editor']
