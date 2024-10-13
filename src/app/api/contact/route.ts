@@ -1,3 +1,7 @@
+/**
+ * Contributed by HarshArora-1205
+ */
+
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 

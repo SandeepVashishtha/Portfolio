@@ -1,3 +1,7 @@
+/**
+ * Contributed by HarshArora-1205
+ */
+
 import React from 'react';
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/solid'
 
