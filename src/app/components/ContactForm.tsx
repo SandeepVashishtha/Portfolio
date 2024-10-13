@@ -5,13 +5,12 @@
 'use client'
 
 import React, { useState } from 'react'
-import Toast from './Toast'
 
-type Props = {}
+import Toast from './Toast'
 
 // export const dynamic = "force-dynamic"
 
-const ContactForm = (props: Props) => {
+const ContactForm = () => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
   const [toast, setToast] = useState<boolean>(false)
@@ -60,8 +59,7 @@ const ContactForm = (props: Props) => {
         setMessageError('Message is required!')
       }
       setSending(false)
-    } else {
-      let data = { name, email, message }
+      const data = { name, email, message }
 
       try {
         const response = await fetch(`./api/contact`, {
@@ -98,85 +96,84 @@ const ContactForm = (props: Props) => {
     >
       <h1 className="text-lg font-medium">or ping me directly here...</h1>
       {toast && <Toast message={toastMsg} status={toastStatus} />}
-      <form className="mt-12 flex w-full max-w-[900px] flex-col gap-8">
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-row gap-4 md:flex-col">
-            <div className="flex w-full flex-col">
-              <label
-                htmlFor="name"
-                className="after:text-xl after:text-red-500 after:content-['*']"
-              >
-                NAME
-              </label>
-              <input
-                type="text"
-                value={name}
-                name="name"
-                id="name"
-                placeholder="John Doe"
-                onChange={(e) => {
-                  setName(e.target.value)
-                }}
-                className="border bg-transparent px-4 py-2 text-lg outline-none"
-                autoComplete="off"
-              />
-              <div id="name-error" className="mt-1 text-red-500">
-                {nameError}
-              </div>
-            </div>
-            <div className="flex w-full flex-col">
-              <label
-                htmlFor="email"
-                className="after:text-xl after:text-red-500 after:content-['*']"
-              >
-                EMAIL
-              </label>
-              <input
-                placeholder="john@email.com"
-                onChange={(e) => {
-                  setEmail(e.target.value)
-                }}
-                type="email"
-                value={email}
-                name="email"
-                id="email"
-                autoComplete="off"
-                className="border bg-transparent px-4 py-2 text-lg outline-none"
-              />
-              <div id="name-error" className="mt-1 text-red-500">
-                {emailError}
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col">
+      <form
+        className="mt-12 flex w-full max-w-[900px] flex-col gap-8"
+        onSubmit={handleSubmit}
+      >
+        <div className="flex flex-row gap-4 md:flex-col">
+          <div className="flex w-full flex-col">
             <label
-              htmlFor="message"
+              htmlFor="name"
               className="after:text-xl after:text-red-500 after:content-['*']"
             >
-              MESSAGE
+              NAME
             </label>
-            <textarea
-              placeholder="Exciting friendship & conversations lie ahead! 😉"
+            <input
+              type="text"
+              value={name}
+              name="name"
+              id="name"
+              placeholder="John Doe"
               onChange={(e) => {
-                setMessage(e.target.value)
+                setName(e.target.value)
               }}
-              name="message"
-              value={message}
-              id="message"
-              cols={30}
-              rows={6}
               className="border bg-transparent px-4 py-2 text-lg outline-none"
+              autoComplete="off"
             />
             <div id="name-error" className="mt-1 text-red-500">
-              {messageError}
+              {nameError}
+            </div>
+          </div>
+          <div className="flex w-full flex-col">
+            <label
+              htmlFor="email"
+              className="after:text-xl after:text-red-500 after:content-['*']"
+            >
+              EMAIL
+            </label>
+            <input
+              placeholder="john@email.com"
+              onChange={(e) => {
+                setEmail(e.target.value)
+              }}
+              type="email"
+              value={email}
+              name="email"
+              id="email"
+              autoComplete="off"
+              className="border bg-transparent px-4 py-2 text-lg outline-none"
+            />
+            <div id="email-error" className="mt-1 text-red-500">
+              {emailError}
             </div>
           </div>
         </div>
+        <div className="flex flex-col">
+          <label
+            htmlFor="message"
+            className="after:text-xl after:text-red-500 after:content-['*']"
+          >
+            MESSAGE
+          </label>
+          <textarea
+            placeholder="Exciting friendship & conversations lie ahead! 😉"
+            onChange={(e) => {
+              setMessage(e.target.value)
+            }}
+            name="message"
+            value={message}
+            id="message"
+            cols={30}
+            rows={6}
+            className="border bg-transparent px-4 py-2 text-lg outline-none"
+          />
+          <div id="message-error" className="mt-1 text-red-500">
+            {messageError}
+          </div>
+        </div>
         <button
+          type="submit"
           className={`w-full border bg-transparent px-4 py-2 text-lg font-bold transition-all delay-100 ease-in-out hover:border-black hover:bg-target hover:text-white disabled:border-gray-500 disabled:bg-gray-500 disabled:hover:bg-gray-500 disabled:hover:text-black dark:disabled:text-black`}
-          onClick={(e: any) => {
-            handleSubmit(e)
-          }}
           disabled={sending}
         >
           {sending ? 'PINGING...' : 'PING ME!'}
