@@ -1,4 +1,5 @@
 import { MotionDiv } from '../lib/motion'
+import ContactForm from './ContactForm'
 import { EmailBtn } from './EmailBtn'
 import { SectionContainer } from './SectionContainer'
 
@@ -25,6 +26,7 @@ export const Contact = () => {
           <EmailBtn />
         </MotionDiv>
       </MotionDiv>
+      <ContactForm />
     </SectionContainer>
   )
 }
