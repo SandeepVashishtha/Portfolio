@@ -3,6 +3,7 @@
  */
 
 import { NextResponse } from 'next/server'
+
 import nodemailer from 'nodemailer'
 
 const transporter = nodemailer.createTransport({
@@ -16,8 +17,7 @@ const transporter = nodemailer.createTransport({
 })
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
   try {
     console.log('running on server!')
     const data = await req.json()
