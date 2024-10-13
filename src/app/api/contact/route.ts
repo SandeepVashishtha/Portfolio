@@ -19,7 +19,7 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(req: Request, res: Response) {
   try {
-    console.log("running on server!")
+    console.log('running on server!')
     const data = await req.json()
     const { name, email, message } = data
 
