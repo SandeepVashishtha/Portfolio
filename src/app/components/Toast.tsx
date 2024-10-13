@@ -3,6 +3,7 @@
  */
 
 import React from 'react'
+
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/solid'
 
 type Props = {
