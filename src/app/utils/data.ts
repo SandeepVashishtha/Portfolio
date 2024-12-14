@@ -89,10 +89,6 @@ export const skillsData = [
     name: 'MongoDB'
   },
   {
-    img: 'mariadb/mariadb-original.svg',
-    name: 'MariaDB'
-  },
-  {
     img: 'oracle/oracle-original.svg',
     name: 'Oracle'
   },
@@ -123,10 +119,6 @@ export const skillsData = [
   {
     img: 'tensorflow/tensorflow-original.svg',
     name: 'TensorFlow'
-  },
-  {
-    img: 'scikitlearn/scikitlearn-original.svg',
-    name: 'scikit-learn'
   },
   {
     img: 'keras/keras-original.svg',

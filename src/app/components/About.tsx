@@ -19,20 +19,34 @@ export const About = () => {
           <p>
             Hello, my name is{' '}
             <span className="font-bold text-target">Sandeep Vashishtha</span>.
-            I’m an
-            <span className="font-bold text-target"> Ethical Hacker</span> and a
-            <span className="font-bold text-target"> Java Developer</span> with
-            experience in both front-end and back-end technologies. I have
-            worked with tools like React, Next.js, Node.js, and I enjoy solving
-            complex challenges to build dynamic, user-friendly web applications.
-            I’m constantly exploring new tech and staying up-to-date with the
+            I’m a
+            <span className="font-bold text-target">
+              Certified Ethical Hacker
+            </span>
+            , and an experienced{' '}
+            <span className="font-bold text-target">Java Developer</span>. I
+            specialize in both front-end and back-end technologies and have
+            expertise in frameworks like React, Next.js, Node.js, and
+            Springboot. I’m also skilled in cloud platforms, including Google
+            Cloud and Azure, for deploying scalable and secure applications. I
+            have a strong focus on cybersecurity, blockchain development, and
+            creating secure web applications.
           </p>
           <p>
-            My portfolio includes projects like real-time collaborative tools,
-            resume builders, and online code editors. I’m always looking for new
-            opportunities to grow and collaborate with others in the tech space.
-            Feel free to reach out!
+            My portfolio highlights projects such as real-time collaborative
+            tools, an AI-powered nutrition assistant, resume builders, and
+            online code editors. Additionally, I’ve worked extensively with
+            tools like TensorFlow and OpenCV for machine learning applications
+            with Postman for API development and testing.
           </p>
+          <p>
+            I’m constantly exploring emerging technologies like Web3, Ethereum
+            blockchain, and advanced cybersecurity practices. I am always eager
+            to take on new challenges and collaborate with like-minded
+            professionals in the tech community. Let’s connect and build
+            something amazing!
+          </p>
+
           <MotionDiv className="flex justify-start md:justify-center">
             <Link
               href="#contact"
