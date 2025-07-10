@@ -4,7 +4,6 @@
 
 ![image](https://github.com/user-attachments/assets/ea99202b-d9fa-4f08-80a1-94dbd4be23b6)
 
-
 ## Introduction
 
 Welcome to my personal portfolio website! This project is built using Next.js and Tailwind CSS to showcase my skills, projects, and experiences. It serves as a central place to share my work and connect with others.

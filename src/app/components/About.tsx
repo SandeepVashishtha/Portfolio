@@ -17,15 +17,30 @@ export const About = () => {
           className="flex max-w-2xl flex-col gap-6 text-xl md:text-center sm:text-lg"
         >
           <p>
-            Hi, I'm <span className="font-bold text-target">Sandeep Vashishtha</span>, a passionate <span className="font-bold text-target">Full Stack Developer</span> with a strong foundation in <span className="font-bold text-target">Java</span>, <span className="font-bold text-target">React</span>, and <span className="font-bold text-target">Spring Boot</span>. I specialize in building high-performance, scalable web applications that solve real-world problems.
+            Hi, I'm{' '}
+            <span className="font-bold text-target">Sandeep Vashishtha</span>, a
+            passionate{' '}
+            <span className="font-bold text-target">Full Stack Developer</span>{' '}
+            with a strong foundation in{' '}
+            <span className="font-bold text-target">Java</span>,{' '}
+            <span className="font-bold text-target">React</span>, and{' '}
+            <span className="font-bold text-target">Spring Boot</span>. I
+            specialize in building high-performance, scalable web applications
+            that solve real-world problems.
           </p>
           <p>
-            My work blends clean, responsive front-end design with powerful back-end systems, often deployed on cloud platforms to ensure speed, security, and reliability. I thrive on turning ideas into working products, and my portfolio reflects this with full-stack projects using modern tech stacks and cloud-native solutions.
+            My work blends clean, responsive front-end design with powerful
+            back-end systems, often deployed on cloud platforms to ensure speed,
+            security, and reliability. I thrive on turning ideas into working
+            products, and my portfolio reflects this with full-stack projects
+            using modern tech stacks and cloud-native solutions.
           </p>
           <p>
-            I’m driven by a love for learning, collaboration, and innovation. Whether it's contributing to a growing team or leading a project from scratch, I’m always ready for the next challenge. Let’s connect and build something meaningful together!
+            I’m driven by a love for learning, collaboration, and innovation.
+            Whether it's contributing to a growing team or leading a project
+            from scratch, I’m always ready for the next challenge. Let’s connect
+            and build something meaningful together!
           </p>
-
 
           <MotionDiv className="flex justify-start md:justify-center">
             <Link
