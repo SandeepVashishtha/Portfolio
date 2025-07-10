@@ -15,7 +15,7 @@ export const Contact = () => {
       >
         <p className="max-w-2xl text-center text-lg">
           Feel free to send me an email. If you have any questions or just want
-          to say hello,
+          to say hello
         </p>
         <MotionDiv
           initial={{ opacity: 0, x: 40 }}
