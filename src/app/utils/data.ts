@@ -65,71 +65,36 @@ export const projectsData: projectType[] = [
 
 export const skillsData = [
   {
-    img: 'java/java-original.svg',
-    name: 'Java'
+    category: 'Languages',
+    items: [
+      { name: 'Java', img: 'java/java-original.svg' },
+      { name: 'JavaScript', img: 'javascript/javascript-original.svg' },
+      { name: 'C++', img: 'cplusplus/cplusplus-original.svg' },
+      { name: 'C', img: 'c/c-original.svg' }
+    ]
   },
   {
-    img: 'python/python-original.svg',
-    name: 'Python'
+    category: 'Frameworks and Libraries',
+    items: [
+      { name: 'React', img: 'react/react-original.svg' },
+      { name: 'SpringBoot', img: 'spring/spring-original.svg' }
+    ]
   },
   {
-    img: 'cplusplus/cplusplus-original.svg',
-    name: 'C++'
+    category: 'Databases',
+    items: [
+      { name: 'MySQL', img: 'mysql/mysql-original.svg' },
+      { name: 'MongoDB', img: 'mongodb/mongodb-original.svg' }
+    ]
   },
   {
-    img: 'c/c-original.svg',
-    name: 'C'
-  },
-  {
-    img: 'javascript/javascript-original.svg',
-    name: 'JavaScript'
-  },
-  {
-    img: 'mongodb/mongodb-original.svg',
-    name: 'MongoDB'
-  },
-  {
-    img: 'oracle/oracle-original.svg',
-    name: 'Oracle'
-  },
-  {
-    img: 'azure/azure-original.svg',
-    name: 'Azure'
-  },
-  {
-    img: 'googlecloud/googlecloud-original.svg',
-    name: 'Google Cloud Platform'
-  },
-  {
-    img: 'html5/html5-original.svg',
-    name: 'HTML'
-  },
-  {
-    img: 'css3/css3-original.svg',
-    name: 'CSS'
-  },
-  {
-    img: 'react/react-original.svg',
-    name: 'React'
-  },
-  {
-    img: 'angular/angular-original.svg',
-    name: 'Angular'
-  },
-  {
-    img: 'tensorflow/tensorflow-original.svg',
-    name: 'TensorFlow'
-  },
-  {
-    img: 'keras/keras-original.svg',
-    name: 'Keras'
-  },
-  {
-    img: 'pytorch/pytorch-original.svg',
-    name: 'PyTorch'
-  },
-  {
-    img: 'selenium/selenium-original.svg',
-    name: 'Selenium'
+    category: 'Cloud and Devops',
+    items: [
+      //{ name: 'AWS', img: 'aws/aws-original.svg' },
+      { name: 'Azure', img: 'azure/azure-original.svg' },
+      { name: 'Docker', img: 'docker/docker-original.svg' },
+      { name: 'Kubernetes', img: 'kubernetes/kubernetes-plain.svg' },
+      { name: 'Github Actions', img: 'github/github-original.svg' }
+    ]
   }
 ]
