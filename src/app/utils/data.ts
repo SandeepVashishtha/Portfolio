@@ -37,7 +37,7 @@ export const projectsData: projectType[] = [
   {
     name: 'Wanna Date?',
     repo: 'https://github.com/SandeepVashishtha/Wanna-Date',
-    url: 'https://wannadate.social/',
+    url: 'https://sandeepvashishtha.github.io/Wanna-Date/',
     image: '/Wanna-date.png', // Replace with the actual image path
     description:
       'A playful and interactive web application featuring a digital card that flips open to reveal the message "Wanna Date?" on hover. Designed with simplicity and creativity, this project showcases the use of CSS animations and hover effects.',
