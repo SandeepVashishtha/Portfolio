@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import { MotionDiv } from '../lib/motion'
 import { skillsData } from '../utils/data'
 import { SectionContainer } from './SectionContainer'
