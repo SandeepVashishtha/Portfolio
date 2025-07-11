@@ -68,9 +68,7 @@ export const skillsData = [
     category: 'Languages',
     items: [
       { name: 'Java', img: 'java/java-original.svg' },
-      { name: 'JavaScript', img: 'javascript/javascript-original.svg' },
-      { name: 'C++', img: 'cplusplus/cplusplus-original.svg' },
-      { name: 'C', img: 'c/c-original.svg' }
+      { name: 'JavaScript', img: 'javascript/javascript-original.svg' }
     ]
   },
   {
