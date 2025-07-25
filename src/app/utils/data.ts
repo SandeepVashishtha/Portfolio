@@ -41,7 +41,7 @@ export const projectsData: projectType[] = [
     name: 'Image Recognition System',
     repo: 'https://github.com/SandeepVashishtha/Image-Recognition',
     url: 'https://github.com/SandeepVashishtha/Image-Recognition',
-    image: '/image-reco.png',
+    image: '/Image-reco.png',
     description:
       'Real-time object detection and recognition system using YOLOv5 and OpenCV. Capable of detecting 80+ object classes with live webcam feed processing, bounding box visualization, and confidence scoring.',
     Skills: [
@@ -59,7 +59,7 @@ export const projectsData: projectType[] = [
     name: 'AlgoVisualizer',
     repo: 'https://github.com/SandeepVashishtha/AlgoVisualizer',
     url: 'https://github.com/SandeepVashishtha/AlgoVisualizer',
-    image: '/algo.png',
+    image: '/Algo.png',
     description:
       'Interactive algorithm visualization platform featuring sorting, searching, and data structure visualizations. Built with React, offers real-time step-by-step algorithm execution with customizable speed controls and performance metrics.',
     Skills: [
@@ -193,7 +193,6 @@ export const skillsData = [
     items: [
       { name: 'SpringBoot', img: 'spring/spring-original.svg' },
       { name: 'React', img: 'react/react-original.svg' },
-      { name: 'Next.js', img: 'nextjs/nextjs-original.svg' },
       { name: 'Node.js', img: 'nodejs/nodejs-original.svg' }
     ]
   },
