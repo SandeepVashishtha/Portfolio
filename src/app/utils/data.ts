@@ -13,53 +13,170 @@ export type projectType = {
   image: string
   description: string
   Skills: string[]
+  status?: 'active' | 'completed' | 'in-progress'
+  featured?: boolean
 }
 
 export const projectsData: projectType[] = [
   {
-    name: 'Online Code-Editor',
+    name: 'LaTeX Resume Builder',
+    repo: 'https://github.com/SandeepVashishtha/LaTeX-Resume-Builder',
+    url: 'https://latex-resume-builder.vercel.app/',
+    image: '/Latex-editor.png',
+    description:
+      'Full-stack LaTeX-based resume builder with real-time preview and PDF generation. Features user authentication, MongoDB integration, and an intuitive split-screen editor with live LaTeX rendering using KaTeX.',
+    Skills: [
+      'React',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'LaTeX',
+      'KaTeX',
+      'JWT Auth'
+    ],
+    status: 'active',
+    featured: true
+  },
+  {
+    name: 'Image Recognition System',
+    repo: 'https://github.com/SandeepVashishtha/Image-Recognition',
+    url: 'https://github.com/SandeepVashishtha/Image-Recognition',
+    image: '/image-reco.png',
+    description:
+      'Real-time object detection and recognition system using YOLOv5 and OpenCV. Capable of detecting 80+ object classes with live webcam feed processing, bounding box visualization, and confidence scoring.',
+    Skills: [
+      'Python',
+      'YOLOv5',
+      'OpenCV',
+      'Computer Vision',
+      'PyTorch',
+      'Real-time Processing'
+    ],
+    status: 'completed',
+    featured: true
+  },
+  {
+    name: 'AlgoVisualizer',
+    repo: 'https://github.com/SandeepVashishtha/AlgoVisualizer',
+    url: 'https://github.com/SandeepVashishtha/AlgoVisualizer',
+    image: '/algo.png',
+    description:
+      'Interactive algorithm visualization platform featuring sorting, searching, and data structure visualizations. Built with React, offers real-time step-by-step algorithm execution with customizable speed controls and performance metrics.',
+    Skills: [
+      'React',
+      'JavaScript',
+      'CSS3',
+      'Algorithm Visualization',
+      'Educational Tech'
+    ],
+    status: 'active',
+    featured: true
+  },
+  {
+    name: 'Sci-Fi Innovation Club Website',
+    repo: 'https://github.com/SandeepVashishtha/Sci-Fi-Cu',
+    url: 'https://sci-fi-cu.vercel.app/',
+    image: '/scifi.png',
+    description:
+      'Official website for Sci-Fi Innovation Club at Chandigarh University. Features futuristic design with interactive star field animations, team management system, contact forms with email integration, and responsive dark theme UI.',
+    Skills: [
+      'Next.js',
+      'React',
+      'Tailwind CSS',
+      'JavaScript',
+      'Email API',
+      'Animation Effects'
+    ],
+    status: 'active',
+    featured: true
+  },
+  {
+    name: 'Online Code Editor',
     repo: 'https://github.com/SandeepVashishtha/Code-Editor',
     url: 'https://github.com/SandeepVashishtha/Code-Editor',
     image: '/code-editor.png',
     description:
-      'A web-based real-time code editor that supports collaborative coding. Built using the MERN stack, with Monaco Editor for syntax highlighting and real-time updates via WebSockets.',
-    Skills: ['MERN', 'Node.js', 'Monaco Editor']
+      'Browser-based code editor with Monaco Editor integration supporting JavaScript and Python execution. Features real-time code execution, Pyodide integration for Python, and responsive design with syntax highlighting.',
+    Skills: [
+      'React',
+      'Monaco Editor',
+      'Pyodide',
+      'JavaScript',
+      'Python',
+      'Code Execution'
+    ],
+    status: 'active',
+    featured: true
   },
   {
-    name: 'LaTeX-Based Resume Builder',
-    repo: 'https://github.com/SandeepVashishtha/LaTeX-Resume-Builder',
-    url: 'https://latex-resume-builder.vercel.app/',
-    image: '/Latex-editor.png', // You can replace this with the actual image path
+    name: 'CareSync Healthcare Platform',
+    repo: 'https://github.com/SandeepVashishtha/CareSync',
+    url: false,
+    image: '/caresync.png',
     description:
-      'A web-based resume builder that allows users to create and customize resumes using LaTeX templates. Features live preview and PDF generation, built with React, TypeScript, and styled-components. Integrated Axios for API communication.',
-    Skills: ['React', 'TypeScript', 'styled-components', 'Axios', 'API']
+      'Comprehensive healthcare management system built with Java and JavaScript. Features patient management, appointment scheduling, medical records, and healthcare provider dashboard with secure authentication.',
+    Skills: [
+      'Java',
+      'SpringBoot',
+      'JavaScript',
+      'Healthcare Tech',
+      'Database Management'
+    ],
+    status: 'in-progress',
+    featured: true
   },
   {
-    name: 'Wanna Date?',
-    repo: 'https://github.com/SandeepVashishtha/Wanna-Date',
-    url: 'https://sandeepvashishtha.github.io/Wanna-Date/',
-    image: '/Wanna-date.png', // Replace with the actual image path
-    description:
-      'A playful and interactive web application featuring a digital card that flips open to reveal the message "Wanna Date?" on hover. Designed with simplicity and creativity, this project showcases the use of CSS animations and hover effects.',
-    Skills: ['HTML', 'CSS', 'Google Fonts']
-  },
-  {
-    name: 'Portfolio',
+    name: 'Portfolio Website',
     repo: 'https://github.com/SandeepVashishtha/Portfolio',
     url: 'https://vashishtha.live/',
-    image: '/Portfolio.png', // Replace with the actual image path
+    image: '/Portfolio.png',
     description:
-      'A personal portfolio website showcasing my skills, projects, and experiences as a Java developer and ethical hacker. The site features a clean and modern design, making it easy for visitors to navigate and view my work.',
-    Skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js']
+      'Modern portfolio website showcasing projects and skills with enhanced 3D animations, responsive design, and smooth user interactions. Built with Next.js 14, featuring project cards with hover effects and performance optimization.',
+    Skills: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Framer Motion',
+      '3D Effects'
+    ],
+    status: 'active',
+    featured: false
   },
   {
-    name: 'Brew Bliss Coffee Shop Website',
+    name: 'Wanna Date? Interactive Card',
+    repo: 'https://github.com/SandeepVashishtha/Wanna-Date',
+    url: 'https://sandeepvashishtha.github.io/Wanna-Date/',
+    image: '/Wanna-date.png',
+    description:
+      'Creative interactive web application featuring a playful digital card with flip animations. Demonstrates CSS animation expertise and creative design thinking with smooth hover effects and responsive interactions.',
+    Skills: [
+      'HTML5',
+      'CSS3',
+      'Animations',
+      'Creative Design',
+      'Interactive UI'
+    ],
+    status: 'completed',
+    featured: false
+  },
+  {
+    name: 'Brew Bliss Coffee Shop',
     repo: 'https://github.com/SandeepVashishtha/Brew-Bliss',
     url: 'https://sandeepvashishtha.github.io/Brew-Bliss/',
-    image: '/brew-Bliss.png', // Replace with the actual image path
+    image: '/brew-Bliss.png',
     description:
-      'Welcome to Brew Bliss, your ultimate destination for savoring exquisite coffee blends! This website features a responsive design, interactive homepage, detailed menu section, customer reviews, and an online table booking form.',
-    Skills: ['HTML5', 'CSS3', 'JavaScript', 'Swiper.js', 'Font Awesome']
+      'Modern coffee shop website with responsive design, interactive menu showcase, and online reservation system. Features smooth animations, Swiper.js integration, and optimized user experience across all devices.',
+    Skills: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'Swiper.js',
+      'Responsive Design',
+      'UX/UI'
+    ],
+    status: 'completed',
+    featured: false
   }
 ]
 
@@ -74,8 +191,10 @@ export const skillsData = [
   {
     category: 'Frameworks and Libraries',
     items: [
+      { name: 'SpringBoot', img: 'spring/spring-original.svg' },
       { name: 'React', img: 'react/react-original.svg' },
-      { name: 'SpringBoot', img: 'spring/spring-original.svg' }
+      { name: 'Next.js', img: 'nextjs/nextjs-original.svg' },
+      { name: 'Node.js', img: 'nodejs/nodejs-original.svg' }
     ]
   },
   {
@@ -86,9 +205,8 @@ export const skillsData = [
     ]
   },
   {
-    category: 'Cloud and Devops',
+    category: 'Cloud and DevOps',
     items: [
-      //{ name: 'AWS', img: 'aws/aws-original.svg' },
       { name: 'Azure', img: 'azure/azure-original.svg' },
       { name: 'Docker', img: 'docker/docker-original.svg' },
       { name: 'Kubernetes', img: 'kubernetes/kubernetes-plain.svg' },

@@ -53,14 +53,13 @@ export const Projects = () => {
           variants={container}
           initial="hidden"
           animate={controls}
-          className="grid grid-cols-2 gap-32 md:gap-16 sm:grid-cols-1 sm:justify-items-center"
+          className="lg:gap-8 grid grid-cols-2 gap-4"
         >
           {projectsData.slice(0, projectsPerPage).map((project, index) => (
             <MotionDiv
               variants={item}
               transition={{ duration: 0.3 }}
               key={index}
-              className="relative flex flex-col gap-3 sm:max-w-sm"
             >
               <ProjectCard projectData={project} />
             </MotionDiv>
@@ -74,7 +73,6 @@ export const Projects = () => {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3 }}
                   key={index}
-                  className="relative flex flex-col gap-3 sm:max-w-sm"
                 >
                   <ProjectCard projectData={project} />
                 </MotionDiv>
