@@ -322,6 +322,7 @@ export const CustomCursor = () => {
         ref={canvasRef}
         className="pointer-events-none fixed left-0 top-0 z-40"
         style={{ width: '100vw', height: '100vh', mixBlendMode: 'screen' }}
+        aria-hidden="true"
       />
 
       {/* Main cursor - Dynamic colored dot with smooth transitions */}
