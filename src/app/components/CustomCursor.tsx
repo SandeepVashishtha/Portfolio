@@ -261,7 +261,7 @@ export const CustomCursor = () => {
           x: newX,
           y: newY,
           timestamp: currentTime,
-          id: currentTime + Math.random()
+          id: crypto.randomUUID()
         }
 
         trailRef.current.unshift(newPoint)
