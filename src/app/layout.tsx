@@ -2,6 +2,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Saira } from 'next/font/google'
 
+import { CustomCursor } from './components/CustomCursor'
+
 import Providers from './providers'
 
 const saira = Saira({ subsets: ['latin'] })
@@ -21,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={saira.className}>
+        <CustomCursor />
         <Providers>{children}</Providers>
       </body>
     </html>

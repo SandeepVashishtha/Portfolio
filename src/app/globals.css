@@ -47,6 +47,12 @@ html {
 body {
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-text));
+  cursor: none;
+}
+
+/* Hide cursor on interactive elements */
+* {
+  cursor: none !important;
 }
 
 /* Enhanced animations and utilities for project cards */
