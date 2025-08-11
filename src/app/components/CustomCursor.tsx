@@ -93,7 +93,7 @@ export const CustomCursor = () => {
       if (smoothedTrail.length < 2) return
 
       ctx.beginPath()
-      ctx.moveTo(smoothedTrail[0]?.x || 0, smoothedTrail[0]?.y || 0)
+      ctx.moveTo(smoothedTrail[0].x, smoothedTrail[0].y)
 
       // Use simple quadratic curves for better performance
       for (let i = 1; i < smoothedTrail.length - 1; i++) {
