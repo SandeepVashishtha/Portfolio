@@ -2,9 +2,12 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Saira } from 'next/font/google'
 
+import ClientLayout from './components/ClientLayout'
 import { CustomCursor } from './components/CustomCursor'
 
 import Providers from './providers'
+
+import { Analytics } from '@vercel/analytics/next'
 
 const saira = Saira({ subsets: ['latin'] })
 
@@ -24,7 +27,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={saira.className}>
         <CustomCursor />
-        <Providers>{children}</Providers>
+        <ClientLayout>
+          <Providers>{children}</Providers>
+        </ClientLayout>
+        <Analytics />
       </body>
     </html>
   )
