@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Saira } from 'next/font/google'
 
 import ClientLayout from './components/ClientLayout'
-// import { CustomCursor } from './components/CustomCursor'
 
 import Providers from './providers'
 
@@ -28,7 +27,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={saira.className}>
-        <CustomCursor />
         <ClientLayout>
           <Providers>{children}</Providers>
         </ClientLayout>
