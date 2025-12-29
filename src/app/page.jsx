@@ -114,7 +114,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-4 grid grid-cols-2 gap-6">
           {data.projects
             .filter((p) => p.featured)
             .slice(0, 6)

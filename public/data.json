@@ -26,9 +26,7 @@
       "category": "Languages",
       "items": [
         { "name": "Java", "img": "java/java-original.svg" },
-        { "name": "JavaScript", "img": "javascript/javascript-original.svg" },
-        { "name": "TypeScript", "img": "typescript/typescript-original.svg" },
-        { "name": "Python", "img": "python/python-original.svg" }
+        { "name": "JavaScript", "img": "javascript/javascript-original.svg" }
       ]
     },
     {
@@ -37,16 +35,14 @@
         { "name": "SpringBoot", "img": "spring/spring-original.svg" },
         { "name": "React", "img": "react/react-original.svg" },
         { "name": "Next.js", "img": "nextjs/nextjs-original.svg" },
-        { "name": "Node.js", "img": "nodejs/nodejs-original.svg" },
-        { "name": "Express", "img": "express/express-original.svg" }
+        { "name": "Node.js", "img": "nodejs/nodejs-original.svg" }
       ]
     },
     {
       "category": "Databases",
       "items": [
         { "name": "MySQL", "img": "mysql/mysql-original.svg" },
-        { "name": "MongoDB", "img": "mongodb/mongodb-original.svg" },
-        { "name": "PostgreSQL", "img": "postgresql/postgresql-original.svg" }
+        { "name": "MongoDB", "img": "mongodb/mongodb-original.svg" }
       ]
     },
     {
@@ -54,7 +50,6 @@
       "items": [
         { "name": "Azure", "img": "azure/azure-original.svg" },
         { "name": "Docker", "img": "docker/docker-original.svg" },
-        { "name": "Kubernetes", "img": "kubernetes/kubernetes-plain.svg" },
         { "name": "Github Actions", "img": "github/github-original.svg" }
       ]
     }
