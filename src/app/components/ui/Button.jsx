@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PropTypes from "prop-types";
 
 export default function Button({ children, href, className = "", ...props }) {
   if (href) {
@@ -22,3 +23,9 @@ export default function Button({ children, href, className = "", ...props }) {
     </button>
   );
 }
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  href: PropTypes.string,
+  className: PropTypes.string,
+};

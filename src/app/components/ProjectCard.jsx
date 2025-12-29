@@ -1,6 +1,8 @@
-import Card from "./ui/Card";
+import PropTypes from "prop-types";
+
 import Badge from "./ui/Badge";
 import Button from "./ui/Button";
+import Card from "./ui/Card";
 
 export default function ProjectCard({ project }) {
   return (
@@ -27,7 +29,9 @@ export default function ProjectCard({ project }) {
               href={project.repo}
               target="_blank"
               rel="noreferrer"
-              aria-label={`View repository for ${project.title || project.name}`}
+              aria-label={`View repository for ${
+                project.title || project.name
+              }`}
               className="px-3 py-2 text-xs"
             >
               <svg
@@ -82,3 +86,15 @@ export default function ProjectCard({ project }) {
     </Card>
   );
 }
+
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    title: PropTypes.string,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    tech: PropTypes.arrayOf(PropTypes.string),
+    repo: PropTypes.string,
+    live: PropTypes.string,
+    url: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  }).isRequired,
+};

@@ -6,10 +6,10 @@ export default function SiteFooter() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('/data.json')
-      .then(res => res.json())
+    fetch("/data.json")
+      .then((res) => res.json())
       .then(setData)
-      .catch(err => console.error('Error loading data:', err));
+      .catch((err) => console.error("Error loading data:", err));
   }, []);
 
   return (
@@ -20,7 +20,7 @@ export default function SiteFooter() {
           href="/"
           className="font-medium hover:text-white duration-200 transition underline underline-offset-2"
         >
-          {data?.personal.name || 'Developer'}
+          {data?.personal.name || "Developer"}
         </a>
       </p>
       {data && (

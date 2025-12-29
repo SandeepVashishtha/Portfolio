@@ -1,25 +1,31 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+
 import CodingStats from "./components/CodingStats";
-import Skills from "./components/Skills";
 import ProjectCard from "./components/ProjectCard";
+import Skills from "./components/Skills";
 import Button from "./components/ui/Button";
 import Card from "./components/ui/Card";
-import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('/data.json')
-      .then(res => res.json())
+    fetch("/data.json")
+      .then((res) => res.json())
       .then(setData)
-      .catch(err => console.error('Error loading data:', err));
+      .catch((err) => console.error("Error loading data:", err));
   }, []);
 
-  if (!data) return <div className="min-h-screen flex items-center justify-center"><p className="text-zinc-400">Loading...</p></div>;
+  if (!data)
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-zinc-400">Loading...</p>
+      </div>
+    );
 
   return (
     <main className="mx-auto my-4 max-w-5xl px-6">
@@ -38,7 +44,7 @@ export default function Home() {
               </div>
               <div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-50 tracking-tight">
-                  Hi, I'm {data.personal.name}
+                  Hi, I&apos;m {data.personal.name}
                 </h1>
                 <p className="text-xs sm:text-sm text-zinc-400 mt-2">
                   {data.personal.title}
@@ -54,9 +60,7 @@ export default function Home() {
               <Button href="/projects">See My Projects</Button>
               <Button href="#skills">View Skills</Button>
               <Button href="/about">About Me</Button>
-              <Button href={`mailto:${data.personal.email}`}>
-                Contact Me
-              </Button>
+              <Button href={`mailto:${data.personal.email}`}>Contact Me</Button>
             </div>
           </div>
         </div>
@@ -110,15 +114,18 @@ export default function Home() {
         </div>
 
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {data.projects.filter(p => p.featured).slice(0, 6).map((p, i) => (
-            <div
-              key={p.name}
-              className="fade-in-up-delayed"
-              style={{ animationDelay: `${i * 80}ms` }}
-            >
-              <ProjectCard project={p} />
-            </div>
-          ))}
+          {data.projects
+            .filter((p) => p.featured)
+            .slice(0, 6)
+            .map((p, i) => (
+              <div
+                key={p.name}
+                className="fade-in-up-delayed"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <ProjectCard project={p} />
+              </div>
+            ))}
         </div>
       </section>
     </main>

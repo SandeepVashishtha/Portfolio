@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { Github, Twitter, Instagram, Menu, X, Linkedin } from "lucide-react";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Github, Twitter, Menu, X, Linkedin } from "lucide-react";
+
 import Button from "./ui/Button";
 
 export default function SiteHeader() {
@@ -10,10 +11,10 @@ export default function SiteHeader() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('/data.json')
-      .then(res => res.json())
+    fetch("/data.json")
+      .then((res) => res.json())
       .then(setData)
-      .catch(err => console.error('Error loading data:', err));
+      .catch((err) => console.error("Error loading data:", err));
   }, []);
 
   const toggleMenu = () => {
@@ -33,7 +34,7 @@ export default function SiteHeader() {
             className="text-base sm:text-lg font-bold tracking-tight text-zinc-50 accent-underline accent-text micro-anim truncate"
             onClick={closeMenu}
           >
-            {data?.personal.name || 'Portfolio'}
+            {data?.personal.name || "Portfolio"}
           </Link>
         </div>
 

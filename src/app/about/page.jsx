@@ -6,13 +6,18 @@ export default function AboutPage() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('/data.json')
-      .then(res => res.json())
+    fetch("/data.json")
+      .then((res) => res.json())
       .then(setData)
-      .catch(err => console.error('Error loading data:', err));
+      .catch((err) => console.error("Error loading data:", err));
   }, []);
 
-  if (!data) return <div className="min-h-screen flex items-center justify-center"><p className="text-zinc-400">Loading...</p></div>;
+  if (!data)
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-zinc-400">Loading...</p>
+      </div>
+    );
 
   return (
     <main className="mx-auto my-12 px-6">
@@ -44,7 +49,7 @@ export default function AboutPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            @{data.social.twitter.split('/').pop()}
+            @{data.social.twitter.split("/").pop()}
           </a>
         </p>
         <p className="text-zinc-300">
@@ -55,7 +60,7 @@ export default function AboutPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {data.social.linkedin.split('/in/').pop()}
+            {data.social.linkedin.split("/in/").pop()}
           </a>
         </p>
         <p className="text-zinc-300">

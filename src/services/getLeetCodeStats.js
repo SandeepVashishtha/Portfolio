@@ -3,7 +3,7 @@ export async function getLeetCodeStats(username) {
     // Using alfa-leetcode-api as a reliable proxy
     const [solvedResponse, contestResponse] = await Promise.all([
       fetch(`https://alfa-leetcode-api.onrender.com/${username}/solved`),
-      fetch(`https://alfa-leetcode-api.onrender.com/${username}/contest`)
+      fetch(`https://alfa-leetcode-api.onrender.com/${username}/contest`),
     ]);
 
     if (!solvedResponse.ok) {
@@ -11,7 +11,9 @@ export async function getLeetCodeStats(username) {
     }
 
     const solvedData = await solvedResponse.json();
-    const contestData = contestResponse.ok ? await contestResponse.json() : null;
+    const contestData = contestResponse.ok
+      ? await contestResponse.json()
+      : null;
 
     return {
       username,
@@ -21,7 +23,9 @@ export async function getLeetCodeStats(username) {
       hard: solvedData.hardSolved || 0,
       ranking: solvedData.ranking || 0,
       streak: solvedData.streak || 0,
-      rating: contestData?.contestRating ? Math.round(contestData.contestRating) : "N/A",
+      rating: contestData?.contestRating
+        ? Math.round(contestData.contestRating)
+        : "N/A",
       globalRank: contestData?.contestGlobalRanking || "N/A",
     };
   } catch (error) {

@@ -1,16 +1,17 @@
 "use client";
 
-import ProjectCard from "../components/ProjectCard";
 import { useEffect, useState } from "react";
+
+import ProjectCard from "../components/ProjectCard";
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch('/data.json')
-      .then(res => res.json())
-      .then(data => setProjects(data.projects))
-      .catch(err => console.error('Error loading data:', err));
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((data) => setProjects(data.projects))
+      .catch((err) => console.error("Error loading data:", err));
   }, []);
 
   return (
