@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+
 import { Github, Twitter, Menu, X, Linkedin } from "lucide-react";
 
 import Button from "./ui/Button";
