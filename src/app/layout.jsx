@@ -15,7 +15,7 @@ const spaceMono = Space_Mono({
 
 export const metadata = {
   title: "Portfolio | Sandeep Vashishtha",
-  description: "Portfolio of Sandeep Vashishtha - Developer, Designer, Creator",
+  description: "Sandeep Vashishtha - Full Stack Developer and Open Source Contributor",
 };
 
 export default function RootLayout({ children }) {
