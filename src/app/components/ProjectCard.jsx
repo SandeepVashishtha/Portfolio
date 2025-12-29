@@ -1,8 +1,7 @@
-import PropTypes from "prop-types";
-
 import Badge from "./ui/Badge";
 import Button from "./ui/Button";
 import Card from "./ui/Card";
+import PropTypes from "prop-types";
 
 export default function ProjectCard({ project }) {
   return (

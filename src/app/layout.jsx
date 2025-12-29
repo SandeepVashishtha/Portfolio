@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Space_Mono } from "next/font/google";
+
 import { Analytics } from "@vercel/analytics/next";
 import PropTypes from "prop-types";
 
@@ -14,8 +15,7 @@ const spaceMono = Space_Mono({
 
 export const metadata = {
   title: "Portfolio | Sandeep Vashishtha",
-  description:
-    "Portfolio of Sandeep Vashishtha - Developer, Designer, Creator",
+  description: "Portfolio of Sandeep Vashishtha - Developer, Designer, Creator",
 };
 
 export default function RootLayout({ children }) {

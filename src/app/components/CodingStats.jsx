@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 
 import { getLeetCodeStats } from "../../services/getLeetCodeStats";
+import PropTypes from "prop-types";
 
 export default function CodingStats({ codingData }) {
   const [stats, setStats] = useState(null);
@@ -61,7 +61,7 @@ export default function CodingStats({ codingData }) {
             <div className="text-center py-8 text-zinc-400">
               <div className="animate-pulse">Loading stats...</div>
             </div>
-          ) : error ? (
+        ) : error ? (
             <div className="text-center py-8 text-red-400 text-sm">
               Failed to load stats. Please try again later.
             </div>

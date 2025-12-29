@@ -46,8 +46,8 @@ Skills.propTypes = {
         PropTypes.shape({
           name: PropTypes.string.isRequired,
           img: PropTypes.string.isRequired,
-        })
+        }),
       ).isRequired,
-    })
+    }),
   ),
 };
