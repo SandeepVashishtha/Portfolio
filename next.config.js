@@ -7,6 +7,12 @@ const nextConfig = {
         hostname: 'drive.google.com',
         port: '',
         pathname: '/file/d/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'ghchart.rshah.org',
+        port: '',
+        pathname: '/**'
       }
     ]
   }

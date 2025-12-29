@@ -2,51 +2,201 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --color-primary: 255 255 255;
-    --color-secondary: 245 245 245;
-    --color-secondary-hover: 229 229 229;
-    --color-target: 0 123 255;
-    --color-text: 17 21 23;
-    --color-text-light: 235 236 243;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-primary: 11 11 11;
-      --color-secondary: 15 15 15;
-      --color-secondary-hover: 30 30 30;
-      --color-text: 235 236 243;
-    }
-  }
-
-  :root[data-theme='light'] {
-    --color-primary: 255 255 255;
-    --color-secondary: 245 245 245;
-    --color-secondary-hover: 229 229 229;
-    --color-text: 17 21 23;
-  }
-
-  :root[data-theme='dark'] {
-    --color-primary: 11 11 11;
-    --color-secondary: 15 15 15;
-    --color-secondary-hover: 30 30 30;
-    --color-text: 235 236 243;
-  }
-}
-
-* {
-  border-color: rgb(var(--color-text));
-}
-
 html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Minimalist palette: clean dark mode with subtle accents */
+:root {
+  --bg-900: #0a0a0a;
+  --bg-800: #0a0a0a;
+  --bg-700: #0a0a0a;
+  --fg-100: #f0f0f5;
+  --fg-200: #d0d0d8;
+  --muted: #888888;
+  --accent: #00a8ff;
+  --accent-dim: rgba(0, 168, 255, 0.1);
+  --color-accent: var(--accent);
+}
+
+/* Minimalist typography and body */
 body {
-  background-color: rgb(var(--color-primary));
-  color: rgb(var(--color-text));
+  background: #0a0a0a;
+  color: var(--fg-100);
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  letter-spacing: 0.3px;
+}
+
+/* Simple fade/slide animations used on the homepage */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.fade-in-up-delayed {
+  animation: fadeInUp 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: 160ms;
+}
+
+/* Elevated cards - clean and minimal */
+.card-elevated {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.card-elevated:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Micro-animations: subtle, fast transitions for interactive elements */
+@keyframes micro-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.micro-anim {
+  transition: transform 180ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 160ms ease, opacity 140ms ease;
+  will-change: transform, box-shadow, opacity;
+}
+
+.micro-anim:hover {
+  transform: translateY(-1px);
+}
+
+.micro-anim:active {
+  transform: translateY(0) scale(0.995);
+}
+
+/* Focus state with accent glow for keyboard accessibility */
+.focus-accent:focus-visible {
+  outline: 2px solid rgba(0, 180, 255, 0.12);
+  box-shadow: 0 0 0 6px rgba(0, 180, 255, 0.04);
+}
+
+/* Simple utility to apply the single accent color to text */
+.accent-text {
+  color: var(--color-accent);
+}
+
+/* Subtle accent background utility */
+.accent-bg {
+  background: rgba(0, 180, 255, 0.02);
+  border-color: rgba(0, 180, 255, 0.06);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--fg-100);
+  padding: 0 1rem;
+  min-height: 48px;
+  transition: all 180ms ease;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.1;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  border-color: var(--accent);
+  background: rgba(0, 168, 255, 0.08);
+  box-shadow: 0 0 0 1px rgba(0, 168, 255, 0.2);
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 160ms ease;
+  cursor: pointer;
+}
+
+.social-button:hover {
+  border-color: var(--accent);
+  background: rgba(0, 168, 255, 0.1);
+  color: var(--accent);
+}
+
+/* header larger style */
+.site-header-compact {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* accent underline animation - refined */
+.accent-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.accent-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: var(--accent);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 300ms ease;
+}
+
+.accent-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* tag badge styles (filled) */
+.tag-badge {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.28rem 0.55rem;
+  font-size: 0.75rem;
+  color: #e6e6e6;
+}
+
+/* masonry helper: prevent cards from breaking across CSS columns */
+.card-masonry {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+}
+
+.wrap-break-word {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Enhanced animations and utilities for project cards */
