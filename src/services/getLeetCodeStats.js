@@ -26,7 +26,11 @@ export async function getLeetCodeStats(username) {
       rating: contestData?.contestRating
         ? Math.round(contestData.contestRating)
         : "N/A",
-      globalRank: contestData?.contestGlobalRanking || "N/A",
+      globalRank:
+  contestData?.contestGlobalRanking ??
+  (contestData?.topPercentage
+    ? `Top ${contestData.topPercentage}%`
+    : "Unranked"),
     };
   } catch (error) {
     console.error("Error fetching LeetCode stats:", error);
