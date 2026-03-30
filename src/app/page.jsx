@@ -29,7 +29,7 @@ export default function Home() {
     );
 
   return (
-    <main className="mx-auto my-4 max-w-5xl px-6">
+    <main className="mx-auto my-4 max-w-5xl px-4 sm:px-6">
       <Card className="border border-white p-8 fade-in-up card-elevated">
         <div className="flex flex-col gap-6">
           <div className="w-full">
