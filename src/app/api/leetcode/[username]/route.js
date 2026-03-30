@@ -9,6 +9,9 @@ const USER_STATS_QUERY = `
       profile {
         ranking
       }
+      userCalendar {
+        streak
+      }
       submitStats: submitStatsGlobal {
         acSubmissionNum {
           difficulty
@@ -85,6 +88,7 @@ async function getLeetCodeGraphQLStats(username) {
     easy: getCountByDifficulty(acSubmissionNum, "Easy"),
     medium: getCountByDifficulty(acSubmissionNum, "Medium"),
     hard: getCountByDifficulty(acSubmissionNum, "Hard"),
+    streak: Number(matchedUser?.userCalendar?.streak ?? 0),
     ranking: Number(matchedUser?.profile?.ranking ?? 0),
     rating: contest?.rating ? Math.round(contest.rating) : "N/A",
     globalRank:
@@ -150,8 +154,8 @@ export async function GET(request, { params }) {
       easy: primary.easy,
       medium: primary.medium,
       hard: primary.hard,
+      streak: primary.streak ?? fallback?.streak ?? 0,
       ranking: primary.ranking || fallback?.ranking || 0,
-      streak: fallback?.streak || 0,
       rating: primary.rating !== "N/A" ? primary.rating : fallback?.rating || "N/A",
       globalRank: primary.globalRank || fallback?.globalRank || "Unranked",
     });
