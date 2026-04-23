@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Sandeep Vashishtha",
-              "url": "https://www.sandeepvashishtha.tech",
+              "url": "https://www.sandeepvashishtha.in",
               "sameAs": [
                 "https://www.linkedin.com/in/SandeepVashishtha",
                 "https://x.com/vsandeep_11",

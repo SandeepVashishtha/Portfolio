@@ -2,7 +2,7 @@
   "personal": {
     "name": "Sandeep Vashishtha",
     "title": "21 · Full Stack Developer · Open Source Contributor · CSE '26",
-    "bio": "Final-year Computer Science and Engineering undergraduate (Batch 2026) at Chandigarh University with expertise in building scalable, high-performance web applications. Specialized in Java, Spring Boot, React.js, and cloud-native solutions with hands-on experience in RESTful API development and database optimization. Active open-source contributor with 200+ successful pull requests.",
+    "bio": "Final-year Computer Science and Engineering undergraduate (Batch 2026) at Chandigarh University with expertise in building scalable, high-performance web applications. Specialized in Java, Spring Boot, React.js, and cloud-native solutions with hands-on experience in RESTful API development and database optimization. Active open-source contributor with 250+ successful pull requests.",
     "email": "sandeepvashishtha@outlook.in",
     "github": "SandeepVashishtha",
     "avatar": "/profile.jpg",
@@ -19,7 +19,7 @@
     }
   },
   "about": {
-    "description": "I'm a passionate Full Stack Developer with a strong foundation in Java, React, and Spring Boot, specializing in building high-performance, scalable web applications that solve real-world problems. My work blends clean, responsive front-end design with powerful back-end systems, often deployed on cloud platforms to ensure speed, security, and reliability. As a final-year CSE student at Chandigarh University (Batch 2026), I combine academic excellence with practical experience, having contributed 200+ successful pull requests to open-source projects and serving as a GSSoC 2025 Project Admin. I thrive on turning innovative ideas into working products, leveraging modern tech stacks and cloud-native solutions. Driven by a love for learning, collaboration, and continuous innovation, I'm always ready to tackle new challenges—whether contributing to a growing team or leading a project from concept to deployment. Let's connect and build something meaningful together!"
+    "description": "I'm a passionate Full Stack Developer with a strong foundation in Java, React, and Spring Boot, specializing in building high-performance, scalable web applications that solve real-world problems. My work blends clean, responsive front-end design with powerful back-end systems, often deployed on cloud platforms to ensure speed, security, and reliability. As a final-year CSE student at Chandigarh University (Batch 2026), I combine academic excellence with practical experience, having contributed 250+ successful pull requests to open-source projects and serving as a GSSoC 2025 Project Admin. I thrive on turning innovative ideas into working products, leveraging modern tech stacks and cloud-native solutions. Driven by a love for learning, collaboration, and continuous innovation, I'm always ready to tackle new challenges—whether contributing to a growing team or leading a project from concept to deployment. Let's connect and build something meaningful together!"
   },
   "skills": [
     {
@@ -55,6 +55,16 @@
     }
   ],
   "projects": [
+    {
+  "name": "Patent IPR Management Platform",
+  "repo": "https://github.com/SandeepVashishtha/Patent-IPR",
+  "url": "https://patent-ipr-version-3.vercel.app",
+  "image": "/patent-ipr.png",
+  "description": "Comprehensive intellectual property management platform that streamlines patent, trademark, copyright, and design filings with role-based workflows, secure JWT authentication, chatbot assistance, and multi-step filing processes. Features dashboards for clients, agents, and admins with document management, timelines, and cost estimation.",
+  "tech": ["Next.js", "React", "Spring Boot", "PostgreSQL", "JWT Auth", "Tailwind CSS", "Swagger"],
+  "status": "active",
+  "featured": true
+},
     {
     "name": "Eventra - Full Stack Event Management System",
     "repo": "https://github.com/SandeepVashishtha/Eventra",
