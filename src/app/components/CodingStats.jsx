@@ -63,7 +63,7 @@ export default function CodingStats({ codingData }) {
             </div>
         ) : error ? (
             <div className="text-center py-8 text-red-400 text-sm">
-              Failed to load stats. Please try again later.
+              {`Failed to load stats.`} {error && <span className="block text-xs text-red-300 mt-2">{error}</span>}
             </div>
           ) : stats ? (
             <div className="space-y-4">

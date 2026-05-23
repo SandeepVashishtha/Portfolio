@@ -62,6 +62,18 @@ async function getLeetCodeGraphQLStats(username) {
       query: USER_STATS_QUERY,
       variables: { username },
     }),
+    // LeetCode's GraphQL endpoint often requires typical browser headers
+    // (referer/origin) to accept requests from server-side environments.
+    headers: {
+      Referer: "https://leetcode.com/",
+      Origin: "https://leetcode.com",
+      Accept: "application/json, text/plain, */*",
+      "User-Agent": "Mozilla/5.0 (compatible; Portfolio/1.0; +https://github.com)",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Sec-Fetch-Site": "same-origin",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Dest": "empty",
+    },
   });
 
   if (!response.ok) {
