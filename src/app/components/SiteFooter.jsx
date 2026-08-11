@@ -1,41 +1,49 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import data from "../utils/data";
 
 export default function SiteFooter() {
-  const [data, setData] = useState(null);
 
-  useEffect(() => {
-    fetch("/data.json")
-      .then((res) => res.json())
-      .then(setData)
-      .catch((err) => console.error("Error loading data:", err));
-  }, []);
 
   return (
-    <footer className="mt-16 w-full border-t border-white/8 pt-8 pb-12 text-center text-xs sm:text-sm text-white/50">
-      <p>
-        Made with <span className="text-red-400">♥</span> by{" "}
-        <a
-          href="/"
-          className="font-medium hover:text-white duration-200 transition underline underline-offset-2"
-        >
-          {data?.personal.name || "Developer"}
-        </a>
-      </p>
-      {data && (
-        <p className="mt-2">
-          Source code on{" "}
-          <a
-            href={`${data.social.github}/portfolio`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium hover:text-white duration-200 transition underline underline-offset-2"
-          >
-            GitHub
-          </a>
+    <footer className="w-full border-t border-white/[0.08] bg-[#090d11] py-10 text-center text-xs text-slate-400 font-mono">
+      <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>
+          Designed & Built by{" "}
+          <span className="text-[#00f2fe] font-medium">
+            {data?.personal?.name || "Sandeep Vashishtha"}
+          </span>
         </p>
-      )}
+        {data && (
+          <div className="flex items-center gap-4">
+            <a
+              href={data.social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#00f2fe] transition-colors"
+            >
+              GitHub
+            </a>
+            <span>•</span>
+            <a
+              href={data.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#00f2fe] transition-colors"
+            >
+              LinkedIn
+            </a>
+            <span>•</span>
+            <a
+              href={data.social.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#00f2fe] transition-colors"
+            >
+              Twitter / X
+            </a>
+          </div>
+        )}
+      </div>
     </footer>
   );
 }
+

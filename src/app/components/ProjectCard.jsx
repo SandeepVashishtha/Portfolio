@@ -1,88 +1,88 @@
-import Badge from "./ui/Badge";
-import Button from "./ui/Button";
-import Card from "./ui/Card";
+import Image from "next/image";
+import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
 import PropTypes from "prop-types";
 
 export default function ProjectCard({ project }) {
+  const projectTitle = project.title || project.name;
+  const projectUrl = project.live || project.url;
+
   return (
-    <Card className="h-full flex flex-col">
-      <h3 className="text-base sm:text-lg font-semibold text-zinc-50">
-        {project.title || project.name}
-      </h3>
-      <p className="mt-3 text-xs sm:text-sm text-zinc-300 wrap-break-word grow leading-relaxed">
-        {project.description}
-      </p>
+    <div className="group relative rounded-xl bg-[#0e151b] border border-white/[0.08] overflow-hidden hover:border-[#00f2fe]/30 transition-all duration-300 flex flex-col h-full shadow-lg">
+      {/* Top subtle glow line on hover */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00f2fe]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      {/* Image Preview Container */}
+      {project.image && (
+        <div className="relative w-full h-44 overflow-hidden bg-[#090d11]">
+          <img
+            src={project.image}
+            alt={projectTitle}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-85 group-hover:opacity-100"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e151b] via-transparent to-transparent" />
+        </div>
+      )}
 
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs text-zinc-400 gap-3 mt-4">
-        <div className="flex flex-wrap gap-2 max-w-full">
-          {project.tech?.map((t) => (
-            <Badge key={t} className="border-white/20">
-              {t}
-            </Badge>
-          ))}
+
+      <div className="p-5 flex flex-col flex-1 relative z-10">
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center gap-2">
+            {project.featured && (
+              <span className="font-mono text-[11px] text-[#10b981] border border-[#10b981]/30 bg-[#10b981]/10 rounded-md px-2 py-0.5 font-medium">
+                Featured
+              </span>
+            )}
+            <span className="font-mono text-[11px] text-slate-400 border border-white/[0.08] rounded-md px-2 py-0.5">
+              2026
+            </span>
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            {project.repo && (
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-slate-100 hover:bg-white/5 transition-colors"
+                aria-label={`GitHub repo for ${projectTitle}`}
+              >
+                <Github className="w-4 h-4" />
+              </a>
+            )}
+            {projectUrl && projectUrl !== false && (
+              <a
+                href={projectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-[#00f2fe] hover:bg-[#00f2fe]/10 transition-colors"
+                aria-label={`Live site for ${projectTitle}`}
+              >
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            )}
+          </div>
         </div>
 
-        <div className="flex gap-2 shrink-0">
-          {project.repo && (
-            <Button
-              href={project.repo}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`View repository for ${
-                project.title || project.name
-              }`}
-              className="px-3 py-2 text-xs"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden
-                className="opacity-90"
-              >
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
-                  fill="currentColor"
-                />
-              </svg>
-              <span>Repo</span>
-            </Button>
-          )}
-          {(project.live || project.url) && project.url !== false && (
-            <Button
-              href={project.live || project.url}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Open live site for ${project.title || project.name}`}
-              className="px-3 py-2 text-xs"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden
-                className="opacity-90"
-              >
-                <path
-                  d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M5 5h5V3H3v7h2V5zm0 14v-5H3v7h7v-2H5z"
-                  fill="currentColor"
-                  opacity="0.9"
-                />
-              </svg>
-              <span>Live</span>
-            </Button>
-          )}
-        </div>
+        <h3 className="font-bold text-lg text-slate-100 mb-2 group-hover:text-[#00f2fe] transition-colors flex items-center gap-1.5">
+          {projectTitle}
+          <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all text-[#00f2fe]" />
+        </h3>
+
+        <p className="text-slate-300 text-xs leading-relaxed flex-1 mb-4 line-clamp-3">
+          {project.description}
+        </p>
+
+        {project.tech && project.tech.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mt-auto pt-2 border-t border-white/[0.06]">
+            {project.tech.map((t) => (
+              <span key={t} className="tag-pill">
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
-    </Card>
+    </div>
   );
 }
 
@@ -95,5 +95,8 @@ ProjectCard.propTypes = {
     repo: PropTypes.string,
     live: PropTypes.string,
     url: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    image: PropTypes.string,
+    featured: PropTypes.bool,
   }).isRequired,
 };
+

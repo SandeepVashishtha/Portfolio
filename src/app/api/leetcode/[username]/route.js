@@ -11,6 +11,7 @@ const USER_STATS_QUERY = `
       }
       userCalendar {
         streak
+        totalActiveDays
       }
       submitStats: submitStatsGlobal {
         acSubmissionNum {
@@ -23,6 +24,11 @@ const USER_STATS_QUERY = `
       rating
       globalRanking
       topPercentage
+      attendedContestsCount
+    }
+    allQuestionsCount {
+      difficulty
+      count
     }
   }
 `;
@@ -94,18 +100,29 @@ async function getLeetCodeGraphQLStats(username) {
   }
 
   const acSubmissionNum = matchedUser?.submitStats?.acSubmissionNum || [];
+  const allQuestions = payload?.data?.allQuestionsCount || [];
+
+  function getTotalByDifficulty(difficulty) {
+    const entry = allQuestions.find((q) => q.difficulty === difficulty);
+    return Number(entry?.count ?? 0);
+  }
 
   return {
     solved: getCountByDifficulty(acSubmissionNum, "All"),
     easy: getCountByDifficulty(acSubmissionNum, "Easy"),
     medium: getCountByDifficulty(acSubmissionNum, "Medium"),
     hard: getCountByDifficulty(acSubmissionNum, "Hard"),
+    totalEasy: getTotalByDifficulty("Easy"),
+    totalMedium: getTotalByDifficulty("Medium"),
+    totalHard: getTotalByDifficulty("Hard"),
+    totalProblems: getTotalByDifficulty("All"),
     streak: Number(matchedUser?.userCalendar?.streak ?? 0),
+    activeDays: Number(matchedUser?.userCalendar?.totalActiveDays ?? 0),
     ranking: Number(matchedUser?.profile?.ranking ?? 0),
     rating: contest?.rating ? Math.round(contest.rating) : "N/A",
-    globalRank:
-      contest?.globalRanking ??
-      (contest?.topPercentage ? `Top ${contest.topPercentage}%` : "Unranked"),
+    topPercentage: contest?.topPercentage ?? null,
+    contestsAttended: contest?.attendedContestsCount ?? 0,
+    globalRank: contest?.globalRanking ?? null,
   };
 }
 
@@ -166,10 +183,17 @@ export async function GET(request, { params }) {
       easy: primary.easy,
       medium: primary.medium,
       hard: primary.hard,
+      totalEasy: primary.totalEasy || 0,
+      totalMedium: primary.totalMedium || 0,
+      totalHard: primary.totalHard || 0,
+      totalProblems: primary.totalProblems || 0,
       streak: primary.streak ?? fallback?.streak ?? 0,
+      activeDays: primary.activeDays ?? 0,
       ranking: primary.ranking || fallback?.ranking || 0,
       rating: primary.rating !== "N/A" ? primary.rating : fallback?.rating || "N/A",
-      globalRank: primary.globalRank || fallback?.globalRank || "Unranked",
+      topPercentage: primary.topPercentage ?? null,
+      contestsAttended: primary.contestsAttended ?? fallback?.contestsAttended ?? 0,
+      globalRank: primary.globalRank ?? fallback?.globalRank ?? null,
     });
   } catch (error) {
     console.error("LeetCode API route error:", error);

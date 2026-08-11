@@ -5,7 +5,6 @@ import { Analytics } from "@vercel/analytics/next";
 import PropTypes from "prop-types";
 
 import SiteFooter from "./components/SiteFooter";
-import SiteHeader from "./components/SiteHeader";
 
 const spaceMono = Space_Mono({
   subsets: ["latin"],
@@ -50,7 +49,6 @@ export default function RootLayout({ children }) {
 
       <body className={`${spaceMono.variable} antialiased`}>
         <div className="relative z-10 min-h-screen">
-          <SiteHeader />
           {children}
           <SiteFooter />
         </div>
@@ -63,3 +61,4 @@ export default function RootLayout({ children }) {
 RootLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
