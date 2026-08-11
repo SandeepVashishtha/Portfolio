@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
 import PropTypes from "prop-types";
 

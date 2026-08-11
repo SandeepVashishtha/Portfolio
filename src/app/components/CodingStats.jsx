@@ -496,6 +496,19 @@ export default function CodingStats({ codingData }) {
   );
 }
 
+GitHubStatsCard.propTypes = {
+  stats: PropTypes.shape({
+    rank: PropTypes.string,
+    totalStars: PropTypes.number,
+    totalCommits: PropTypes.number,
+    totalPRs: PropTypes.number,
+    totalIssues: PropTypes.number,
+    contributedTo: PropTypes.number,
+    totalContributions: PropTypes.number,
+  }),
+  username: PropTypes.string,
+};
+
 CodingStats.propTypes = {
   codingData: PropTypes.shape({
     leetcode: PropTypes.shape({ username: PropTypes.string.isRequired }),

@@ -10,6 +10,7 @@ import data from "./utils/data";
 import CodingStats from "./components/CodingStats";
 import ProjectCard from "./components/ProjectCard";
 import Skills from "./components/Skills";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   const [filter, setFilter] = useState("all");
@@ -234,6 +235,9 @@ export default function Home() {
           </div>
         </section>
       )}
+
+      {/* Contact Form Section */}
+      <ContactForm />
     </main>
   );
 }
