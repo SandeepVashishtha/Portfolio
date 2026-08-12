@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={spaceMono.variable}>
       <head>
         {/* --- JSON-LD Person Schema for Google SEO --- */}
         <script
@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className={`${spaceMono.variable} antialiased`}>
+      <body className="antialiased">
         <div className="relative z-10 min-h-screen">
           {children}
           <SiteFooter />
@@ -57,6 +57,7 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
 
 RootLayout.propTypes = {
   children: PropTypes.node.isRequired,

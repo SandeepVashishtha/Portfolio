@@ -9,6 +9,9 @@ const config: Config = {
   darkMode: ['class', "data-theme='dark'"],
   theme: {
     extend: {
+      fontFamily: {
+        mono: ['var(--font-mono)', 'monospace'],
+      },
       colors: {
         primary: 'rgb(var(--color-primary) / <alpha-value>)',
         secondary: 'rgb(var(--color-secondary) / <alpha-value>)',

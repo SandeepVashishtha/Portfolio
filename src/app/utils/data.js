@@ -1,8 +1,8 @@
 const data = {
   personal: {
     name: "Sandeep Vashishtha",
-    title: "21 · Full Stack Developer · Open Source Contributor · CSE '26",
-    bio: "Final-year Computer Science and Engineering undergraduate (Batch 2026) at Chandigarh University with expertise in building scalable, high-performance web applications. Specialized in Java, Spring Boot, React.js, and cloud-native solutions with hands-on experience in RESTful API development and database optimization. Active open-source contributor with 250+ successful pull requests.",
+    title: "Full Stack Developer · Open Source Contributor · CS Graduate",
+    bio: "Computer Science graduate focused on Java, Spring Boot, React.js, and cloud technologies. Built scalable full-stack applications and contributed 300+ merged pull requests to open-source projects.",
     email: "sandeepvashishtha@outlook.in",
     github: "SandeepVashishtha",
     avatar: "/profile.jpg",
@@ -19,7 +19,7 @@ const data = {
   },
   about: {
     description:
-      "I'm a passionate Full Stack Developer with a strong foundation in Java, React, and Spring Boot, specializing in building high-performance, scalable web applications that solve real-world problems. My work blends clean, responsive front-end design with powerful back-end systems, often deployed on cloud platforms to ensure speed, security, and reliability. As a final-year CSE student at Chandigarh University (Batch 2026), I combine academic excellence with practical experience, having contributed 250+ successful pull requests to open-source projects and serving as a GSSoC 2025 Project Admin. I thrive on turning innovative ideas into working products, leveraging modern tech stacks and cloud-native solutions. Driven by a love for learning, collaboration, and continuous innovation, I'm always ready to tackle new challenges—whether contributing to a growing team or leading a project from concept to deployment. Let's connect and build something meaningful together!",
+      "I am a Full Stack Developer and CS graduate focused on engineering high-performance, scalable web systems with Java, Spring Boot, and React. With extensive hands-on experience in RESTful APIs, database optimization, and cloud deployments, I bring robust software engineering practices to every project. I am also an active open-source contributor with 250+ merged PRs and GSSoC Project Admin experience.",
   },
   skills: [
     {
@@ -77,105 +77,6 @@ const data = {
       tech: ["React", "Spring Boot", "Spring Security", "PostgreSQL", "Docker", "JWT Auth", "Tailwind CSS"],
       status: "active",
       featured: true,
-    },
-    {
-      name: "LaTeX Resume Builder",
-      repo: "https://github.com/SandeepVashishtha/LaTeX-Resume-Builder",
-      url: "https://latex-resume-builder.vercel.app/",
-      image: "/Latex-editor.png",
-      description:
-        "Full-stack LaTeX resume builder with real-time preview, PDF generation, authentication, and MongoDB integration. Features a split-screen LaTeX editor with live rendering using KaTeX.",
-      tech: ["React", "Node.js", "Express", "MongoDB", "LaTeX", "KaTeX", "JWT Auth"],
-      status: "active",
-      featured: true,
-    },
-    {
-      name: "Image Recognition System",
-      repo: "https://github.com/SandeepVashishtha/Image-Recognition",
-      url: "https://github.com/SandeepVashishtha/Image-Recognition",
-      image: "/Image-reco.png",
-      description:
-        "Real-time object detection and recognition system using YOLOv5 and OpenCV. Handles 80+ object classes with webcam feed support, bounding boxes, and confidence prediction.",
-      tech: ["Python", "YOLOv5", "OpenCV", "Computer Vision", "PyTorch"],
-      status: "completed",
-      featured: true,
-    },
-    {
-      name: "AlgoVisualizer",
-      repo: "https://github.com/SandeepVashishtha/AlgoVisualizer",
-      url: "https://github.com/SandeepVashishtha/AlgoVisualizer",
-      image: "/Algo.png",
-      description:
-        "Interactive visualization tool for sorting, searching, and data structure algorithms. Includes step-by-step execution, adjustable speed, and educational insights.",
-      tech: ["React", "JavaScript", "CSS3", "Algorithm Visualization"],
-      status: "active",
-      featured: true,
-    },
-    {
-      name: "Sci-Fi Innovation Club Website",
-      repo: "https://github.com/SandeepVashishtha/Sci-Fi-Cu",
-      url: "https://sci-fi-cu.vercel.app/",
-      image: "/scifi.png",
-      description:
-        "Official website for the Sci-Fi Innovation Club with animations, star-field effects, robust team management, contact forms, and a polished futuristic UI.",
-      tech: ["Next.js", "React", "Tailwind CSS", "JavaScript", "Email API", "Animations"],
-      status: "active",
-      featured: true,
-    },
-    {
-      name: "Online Code Editor",
-      repo: "https://github.com/SandeepVashishtha/Code-Editor",
-      url: "https://github.com/SandeepVashishtha/Code-Editor",
-      image: "/code-editor.png",
-      description:
-        "Browser-based IDE with Monaco Editor, real-time JavaScript and Python execution, Pyodide integration, syntax highlighting, and responsive layout.",
-      tech: ["React", "Monaco Editor", "Pyodide", "JavaScript", "Python"],
-      status: "active",
-      featured: true,
-    },
-    {
-      name: "CareSync Healthcare Platform",
-      repo: "https://github.com/SandeepVashishtha/CareSync",
-      url: false,
-      image: "/caresync.png",
-      description:
-        "Healthcare management system built with Java and Spring Boot, featuring appointment scheduling, medical record management, patient dashboard, and secure authentication.",
-      tech: ["Java", "SpringBoot", "JavaScript", "Healthcare Tech", "Database Management"],
-      status: "in-progress",
-      featured: true,
-    },
-    {
-      name: "Portfolio Website",
-      repo: "https://github.com/SandeepVashishtha/Portfolio",
-      url: "https://vashishtha.live/",
-      image: "/Portfolio.png",
-      description:
-        "Modern personal portfolio with animations, project showcases, responsive design, and optimized performance built on Next.js 14.",
-      tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      status: "active",
-      featured: false,
-    },
-    {
-      name: "Wanna Date? Interactive Card",
-      repo: "https://github.com/SandeepVashishtha/Wanna-Date",
-      url: "https://sandeepvashishtha.github.io/Wanna-Date/",
-      image: "/Wanna-date.png",
-      description:
-        "Creative interactive web application featuring a playful digital card with flip animations. Demonstrates CSS animation expertise and creative design thinking with smooth hover effects and responsive interactions.",
-      tech: ["HTML5", "CSS3", "Animations", "Creative Design", "Interactive UI"],
-      status: "completed",
-      featured: false,
-    },
-    {
-      name: "Brew Bliss Coffee Shop",
-      repo: "https://github.com/SandeepVashishtha/Brew-Bliss",
-      url: "https://sandeepvashishtha.github.io/Brew-Bliss/",
-      image: "/brew-Bliss.png",
-      description:
-        "Modern coffee shop website with responsive design, interactive menu showcase, and online reservation system. Features smooth animations, Swiper.js integration, and optimized user experience across all devices.",
-      tech: ["HTML5", "CSS3", "JavaScript", "Swiper.js", "Responsive Design", "UX/UI"],
-      status: "completed",
-      featured: false,
     },
   ],
 };

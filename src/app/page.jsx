@@ -97,7 +97,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-3 mb-10">
               <a href="#projects" className="btn-primary">
                 <span>View Projects</span>
-                <Sparkles className="w-4 h-4" />
+                {/* <Sparkles className="w-4 h-4" /> */}
               </a>
               <a href={`mailto:${data.personal.email}`} className="btn-outline">
                 Contact Me

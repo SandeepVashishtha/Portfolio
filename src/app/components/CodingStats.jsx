@@ -28,15 +28,15 @@ function getColor(count) {
 
 function gradeFromRank(rank) {
   const map = {
-    "A++": { color: "#39d353", stroke: "#39d353", pct: 100 },
-    "A+":  { color: "#39d353", stroke: "#39d353", pct: 92  },
-    "A":   { color: "#26a641", stroke: "#26a641", pct: 84  },
-    "B+":  { color: "#00b4d8", stroke: "#00b4d8", pct: 74  },
-    "B":   { color: "#0096c7", stroke: "#0096c7", pct: 64  },
+    "A++": { color: "#2eb85c", stroke: "#2eb85c", pct: 100 },
+    "A+":  { color: "#2eb85c", stroke: "#2eb85c", pct: 92  },
+    "A":   { color: "#239a46", stroke: "#239a46", pct: 84  },
+    "B+":  { color: "#38bdf8", stroke: "#38bdf8", pct: 74  },
+    "B":   { color: "#0284c7", stroke: "#0284c7", pct: 64  },
     "C+":  { color: "#f59e0b", stroke: "#f59e0b", pct: 54  },
     "C":   { color: "#ef4444", stroke: "#ef4444", pct: 40  },
   };
-  return map[rank] ?? { color: "#39d353", stroke: "#39d353", pct: 80 };
+  return map[rank] ?? { color: "#2eb85c", stroke: "#2eb85c", pct: 80 };
 }
 
 function GitHubStatsCard({ stats, username }) {
@@ -50,9 +50,9 @@ function GitHubStatsCard({ stats, username }) {
     {
       label: "Total Stars Earned",
       value: stats.totalStars ?? "—",
-      valueColor: "#f59e0b",
+      valueColor: "#eab308",
       icon: (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-yellow-400">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-yellow-500">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ),
@@ -60,9 +60,9 @@ function GitHubStatsCard({ stats, username }) {
     {
       label: "Total Commits",
       value: stats.totalCommits > 999 ? (stats.totalCommits / 1000).toFixed(1) + "k" : stats.totalCommits,
-      valueColor: "#60a5fa",
+      valueColor: "#38bdf8",
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 text-blue-400">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 text-sky-400">
           <circle cx="12" cy="12" r="3" /><line x1="12" y1="2" x2="12" y2="9" /><line x1="12" y1="15" x2="12" y2="22" />
         </svg>
       ),
@@ -70,7 +70,7 @@ function GitHubStatsCard({ stats, username }) {
     {
       label: "Total PRs",
       value: stats.totalPRs,
-      valueColor: "#a78bfa",
+      valueColor: "#c084fc",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5 text-purple-400">
           <circle cx="18" cy="18" r="3" /><circle cx="6" cy="6" r="3" /><path d="M13 6h3a2 2 0 0 1 2 2v7" /><line x1="6" y1="9" x2="6" y2="21" />
@@ -100,12 +100,12 @@ function GitHubStatsCard({ stats, username }) {
   ];
 
   return (
-    <div className="rounded-none border border-white/15 bg-gradient-to-br from-zinc-900/60 to-zinc-800/40 p-4 sm:p-5">
+    <div className="rounded-md border border-white/10 bg-[#0d1117] p-4 sm:p-5">
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
         <div>
-          <p className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-0.5">github stats</p>
-          <h4 className="text-sm sm:text-base font-bold" style={{ color }}>
+          <p className="text-[10px] font-mono text-slate-500 tracking-widest uppercase mb-0.5">GITHUB STATS</p>
+          <h4 className="text-sm sm:text-base font-bold text-slate-200">
             {username}&apos;s GitHub Stats
           </h4>
         </div>
@@ -113,7 +113,7 @@ function GitHubStatsCard({ stats, username }) {
           href={"https://github.com/" + username}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs text-blue-400 hover:text-blue-300 underline underline-offset-2"
+          className="text-xs text-slate-400 hover:text-white transition-colors"
         >
           View Profile →
         </a>
@@ -125,50 +125,47 @@ function GitHubStatsCard({ stats, username }) {
         <div className="flex-1 space-y-2.5">
           {rows.map(({ icon, label, value, valueColor }) => (
             <div key={label} className="flex items-center justify-between gap-2">
-              <span className="flex items-center gap-2 text-xs text-zinc-400">
+              <span className="flex items-center gap-2 text-xs text-slate-400">
                 {icon}
                 <span>{label}:</span>
               </span>
-              <span className="text-xs font-bold tabular-nums" style={{ color: valueColor }}>
+              <span className="text-xs font-semibold tabular-nums" style={{ color: valueColor }}>
                 {typeof value === "number" ? value.toLocaleString() : value}
               </span>
             </div>
           ))}
         </div>
 
-        {/* Grade ring */}
+        {/* Grade ring — clean without heavy glow */}
         <div className="flex-shrink-0 flex flex-col items-center gap-1">
-          <svg width="90" height="90" viewBox="0 0 90 90">
-            {/* Outer glow track */}
-            <circle cx="45" cy="45" r={R} fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="9" />
+          <svg width="84" height="84" viewBox="0 0 84 84">
             {/* Track */}
-            <circle cx="45" cy="45" r={R} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="7" />
+            <circle cx="42" cy="42" r={R} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="6" />
             {/* Progress arc */}
             <circle
-              cx="45" cy="45" r={R}
+              cx="42" cy="42" r={R}
               fill="none"
               stroke={stroke}
-              strokeWidth="7"
+              strokeWidth="6"
               strokeLinecap="round"
               strokeDasharray={`${dash} ${C}`}
               strokeDashoffset={C / 4}
-              style={{ filter: `drop-shadow(0 0 8px ${stroke}cc)`, transition: "stroke-dasharray 1.2s ease" }}
+              style={{ transition: "stroke-dasharray 1s ease" }}
             />
             {/* Grade text */}
             <text
-              x="45" y="50"
+              x="42" y="46"
               textAnchor="middle"
               dominantBaseline="middle"
               fill={color}
               fontSize="18"
               fontWeight="bold"
               fontFamily="inherit"
-              style={{ filter: `drop-shadow(0 0 4px ${color}99)` }}
             >
               {grade}
             </text>
           </svg>
-          <span className="text-[10px] text-zinc-500 font-mono tracking-wider">RANK</span>
+          <span className="text-[10px] text-slate-500 font-mono tracking-wider">RANK</span>
         </div>
       </div>
     </div>
@@ -204,7 +201,7 @@ function GitHubHeatmap({ days, totalContributions }) {
 
   const monthLabels = [];
   const seenMonths = new Set();
-  const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   weeks.forEach((week, wi) => {
     const firstReal = week.find((d) => d !== null);
@@ -263,7 +260,7 @@ function GitHubHeatmap({ days, totalContributions }) {
         {tooltip && (
           <div
             style={{ position: "absolute", left: tooltip.x, top: tooltip.y, transform: "translate(-50%, -100%)", pointerEvents: "none", zIndex: 50 }}
-            className="bg-zinc-800 border border-white/10 text-zinc-100 text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap"
+            className="bg-zinc-900 border border-white/10 text-zinc-100 text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap"
           >
             <span className="font-semibold">{tooltip.count} contribution{tooltip.count !== 1 ? "s" : ""}</span>
             <span className="text-zinc-400 ml-1">on {new Date(tooltip.date + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
@@ -271,10 +268,10 @@ function GitHubHeatmap({ days, totalContributions }) {
         )}
       </div>
       <div className="mt-2 flex items-center justify-between flex-wrap gap-2">
-        <span className="text-xs text-zinc-400">
-          <span className="text-zinc-200 font-semibold">{totalContributions.toLocaleString()}</span> contributions in the last year
+        <span className="text-xs text-slate-400">
+          <span className="text-slate-200 font-semibold">{totalContributions.toLocaleString()}</span> contributions in the last year
         </span>
-        <div className="flex items-center gap-1.5 text-xs text-zinc-500">
+        <div className="flex items-center gap-1.5 text-xs text-slate-500">
           <span>Less</span>
           {COLORS.map((c, i) => (
             <span key={i} style={{ display: "inline-block", width: 11, height: 11, background: c, borderRadius: 2, border: "1px solid rgba(255,255,255,0.06)" }} />
@@ -285,6 +282,7 @@ function GitHubHeatmap({ days, totalContributions }) {
     </div>
   );
 }
+
 
 export default function CodingStats({ codingData }) {
   const [lcStats, setLcStats] = useState(null);
@@ -349,29 +347,29 @@ export default function CodingStats({ codingData }) {
             <div className="text-center py-8 text-red-400 text-sm">Failed to load stats. {lcError && <span className="block text-xs text-red-300 mt-2">{lcError}</span>}</div>
           ) : lcStats ? (
             <div className="space-y-3">
-              {/* Contest rating strip — compact inline */}
+              {/* Original layout with subtle authentic LeetCode colors */}
               {lcStats.rating !== "N/A" && (
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 px-3 py-2 rounded-sm border border-white/10 bg-white/[0.03]">
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider">Rating</span>
-                    <span className="text-base font-bold text-white">{lcStats.rating.toLocaleString()}</span>
+                    <span className="text-[10px] text-zinc-400 font-mono uppercase tracking-wider">Rating</span>
+                    <span className="text-base font-bold text-zinc-100">{lcStats.rating.toLocaleString()}</span>
                   </div>
                   <div className="h-4 w-px bg-white/10" />
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider">Global</span>
+                    <span className="text-[10px] text-zinc-400 font-mono uppercase tracking-wider">Global</span>
                     <span className="text-sm font-semibold text-zinc-200">{lcStats.globalRank ? lcStats.globalRank.toLocaleString() : "—"}</span>
                   </div>
                   <div className="h-4 w-px bg-white/10" />
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider">Attended</span>
+                    <span className="text-[10px] text-zinc-400 font-mono uppercase tracking-wider">Attended</span>
                     <span className="text-sm font-semibold text-zinc-200">{lcStats.contestsAttended ?? "—"}</span>
                   </div>
                   {lcStats.topPercentage != null && (
                     <>
                       <div className="h-4 w-px bg-white/10" />
                       <div className="flex items-baseline gap-1.5">
-                        <span className="text-[10px] text-zinc-500 font-mono uppercase tracking-wider">Top</span>
-                        <span className="text-sm font-semibold" style={{ color: "#4ade80" }}>{lcStats.topPercentage.toFixed(2)}%</span>
+                        <span className="text-[10px] text-zinc-400 font-mono uppercase tracking-wider">Top</span>
+                        <span className="text-sm font-semibold text-[#00B8A3]">{lcStats.topPercentage.toFixed(2)}%</span>
                       </div>
                     </>
                   )}
@@ -380,7 +378,7 @@ export default function CodingStats({ codingData }) {
 
               {/* Donut + stat boxes side by side */}
               <div className="flex gap-4 items-center">
-                {/* Solved donut — larger & visible */}
+                {/* Solved donut */}
                 {(() => {
                   const solved = lcStats.solved || 0;
                   const totalProblems = lcStats.totalProblems || 3400;
@@ -394,15 +392,15 @@ export default function CodingStats({ codingData }) {
                         <circle cx="55" cy="55" r={Rr} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="8" />
                         <circle
                           cx="55" cy="55" r={Rr}
-                          fill="none" stroke="#f59e0b" strokeWidth="8"
+                          fill="none" stroke="#FFA116" strokeWidth="8"
                           strokeLinecap="round"
                           strokeDasharray={`${solvedDash} ${Cc}`}
                           strokeDashoffset={Cc / 4}
-                          style={{ filter: "drop-shadow(0 0 7px #f59e0bcc)", transition: "stroke-dasharray 1.2s ease" }}
+                          style={{ transition: "stroke-dasharray 1.2s ease" }}
                         />
-                        <text x="55" y="49" textAnchor="middle" fill="#fbbf24" fontSize="20" fontWeight="bold" fontFamily="inherit">{solved}</text>
-                        <text x="55" y="64" textAnchor="middle" fill="#71717a" fontSize="10" fontFamily="inherit">/{totalProblems}</text>
-                        <text x="55" y="77" textAnchor="middle" fill="#52525b" fontSize="9" fontFamily="inherit">Solved</text>
+                        <text x="55" y="49" textAnchor="middle" fill="#f8fafc" fontSize="20" fontWeight="bold" fontFamily="inherit">{solved}</text>
+                        <text x="55" y="64" textAnchor="middle" fill="#64748b" fontSize="10" fontFamily="inherit">/{totalProblems}</text>
+                        <text x="55" y="77" textAnchor="middle" fill="#94a3b8" fontSize="9" fontFamily="inherit">Solved</text>
                       </svg>
                     </div>
                   );
@@ -411,16 +409,16 @@ export default function CodingStats({ codingData }) {
                 {/* 3 compact stat boxes stacked vertically */}
                 <div className="flex-1 flex flex-col gap-2">
                   <div className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-sm flex items-center justify-between">
-                    <span className="text-[10px] text-zinc-500">Streak</span>
-                    <span className="text-sm font-bold" style={{ color: "#fb923c", textShadow: "0 0 8px #fb923c55" }}>{lcStats.streak} 🔥</span>
+                    <span className="text-[10px] text-zinc-400">Streak</span>
+                    <span className="text-sm font-bold text-[#FFA116]">{lcStats.streak} 🔥</span>
                   </div>
                   <div className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-sm flex items-center justify-between">
-                    <span className="text-[10px] text-zinc-500">Active Days</span>
-                    <span className="text-sm font-bold text-cyan-400">{lcStats.activeDays > 0 ? lcStats.activeDays : "—"}</span>
+                    <span className="text-[10px] text-zinc-400">Active Days</span>
+                    <span className="text-sm font-bold text-slate-200">{lcStats.activeDays > 0 ? lcStats.activeDays : "—"}</span>
                   </div>
                   <div className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-sm flex items-center justify-between">
-                    <span className="text-[10px] text-zinc-500">Rank</span>
-                    <span className="text-sm font-bold text-purple-400">{lcStats.ranking ? (lcStats.ranking / 1000).toFixed(0) + "k" : "—"}</span>
+                    <span className="text-[10px] text-zinc-400">Rank</span>
+                    <span className="text-sm font-bold text-slate-200">{lcStats.ranking ? (lcStats.ranking / 1000).toFixed(0) + "k" : "—"}</span>
                   </div>
                 </div>
               </div>
@@ -428,28 +426,28 @@ export default function CodingStats({ codingData }) {
               {/* Difficulty progress bars */}
               {(() => {
                 const difficulties = [
-                  { label: "Easy",   count: lcStats.easy,   total: lcStats.totalEasy   || 958,  color: "#4ade80" },
-                  { label: "Medium", count: lcStats.medium, total: lcStats.totalMedium || 2098, color: "#fbbf24" },
-                  { label: "Hard",   count: lcStats.hard,   total: lcStats.totalHard   || 962,  color: "#f87171" },
+                  { label: "Easy",   count: lcStats.easy,   total: lcStats.totalEasy   || 958,  color: "#00B8A3" },
+                  { label: "Medium", count: lcStats.medium, total: lcStats.totalMedium || 2098, color: "#FFC01E" },
+                  { label: "Hard",   count: lcStats.hard,   total: lcStats.totalHard   || 962,  color: "#FF375F" },
                 ];
                 return (
-                  <div className="space-y-2">
+                  <div className="space-y-2 pt-1">
                     {difficulties.map(({ label, count, total, color }) => {
                       const pct = total > 0 ? Math.round((count / total) * 100) : 0;
                       return (
                         <div key={label}>
-                          <div className="flex items-center justify-between mb-1">
-                            <span className="text-xs font-semibold" style={{ color }}>{label}</span>
-                            <span className="text-xs tabular-nums">
-                              <span className="font-bold" style={{ color }}>{count}</span>
-                              <span className="text-zinc-600">/{total}</span>
-                              <span className="text-zinc-600 ml-1">({pct}%)</span>
+                          <div className="flex items-center justify-between mb-1 text-xs">
+                            <span className="font-medium" style={{ color }}>{label}</span>
+                            <span className="tabular-nums">
+                              <span className="font-semibold text-slate-200">{count}</span>
+                              <span className="text-zinc-500">/{total}</span>
+                              <span className="text-zinc-500 ml-1">({pct}%)</span>
                             </span>
                           </div>
-                          <div className="h-1.5 rounded-full w-full" style={{ background: "rgba(255,255,255,0.06)" }}>
+                          <div className="h-1.5 rounded-full w-full bg-white/[0.06]">
                             <div
                               className="h-1.5 rounded-full transition-all duration-1000"
-                              style={{ width: `${pct}%`, background: color, boxShadow: `0 0 6px ${color}88` }}
+                              style={{ width: `${pct}%`, backgroundColor: color }}
                             />
                           </div>
                         </div>
