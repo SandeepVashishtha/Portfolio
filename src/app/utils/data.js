@@ -55,30 +55,114 @@ const data = {
       ],
     },
   ],
-  projects: [
-    {
-      name: "Patent IPR Management Platform",
-      repo: "https://github.com/SandeepVashishtha/Patent-IPR",
-      url: "https://patent-ipr-version-3.vercel.app",
-      image: "/patent-ipr.png",
-      description:
-        "Comprehensive intellectual property management platform that streamlines patent, trademark, copyright, and design filings with role-based workflows, secure JWT authentication, chatbot assistance, and multi-step filing processes. Features dashboards for clients, agents, and admins with document management, timelines, and cost estimation.",
-      tech: ["Next.js", "React", "Spring Boot", "PostgreSQL", "JWT Auth", "Tailwind CSS", "Swagger"],
-      status: "active",
-      featured: true,
-    },
-    {
-      name: "Eventra - Full Stack Event Management System",
-      repo: "https://github.com/SandeepVashishtha/Eventra",
-      url: "https://github.com/SandeepVashishtha/Eventra",
-      image: "/eventra.png",
-      description:
-        "Modern full-stack event management platform with event creation, RSVP tracking, QR-code check-ins, admin dashboards, analytics, and secure JWT authentication. Built using Spring Boot backend and React frontend with Tailwind styling.",
-      tech: ["React", "Spring Boot", "Spring Security", "PostgreSQL", "Docker", "JWT Auth", "Tailwind CSS"],
-      status: "active",
-      featured: true,
-    },
+projects: [
+  {
+    name: "Patent IPR Management Platform",
+    repo: "https://github.com/SandeepVashishtha/Patent-IPR",
+    url: "https://patent-ipr-version-3.vercel.app",
+    image: "/patent-ipr.png",
+    description:
+      "Comprehensive intellectual property management platform that streamlines patent, trademark, copyright, and design filings with role-based workflows, secure JWT authentication, chatbot assistance, and multi-step filing processes. Features dashboards for clients, agents, and admins with document management, timelines, and cost estimation.",
+    tech: [
+      "Next.js",
+      "React",
+      "Spring Boot",
+      "PostgreSQL",
+      "JWT Auth",
+      "Tailwind CSS",
+      "Swagger"
+    ],
+    status: "active",
+    featured: true,
+  },
+  {
+    name: "Eventra - Full Stack Event Management System",
+    repo: "https://github.com/SandeepVashishtha/Eventra",
+    url: "https://eventra.sandeepvashishtha.in/",
+    image: "/eventra.png",
+    description:
+      "Modern full-stack event management platform with event creation, RSVP tracking, QR-code check-ins, admin dashboards, analytics, and secure JWT authentication. Built using Spring Boot backend and React frontend with Tailwind styling.",
+    tech: [
+      "React",
+      "Spring Boot",
+      "Spring Security",
+      "PostgreSQL",
+      "Docker",
+      "JWT Auth",
+      "Tailwind CSS"
+    ],
+    status: "active",
+    featured: true,
+  },
+  {
+  name: "AI-Powered Recruitment & Talent Intelligence Platform",
+  repo: "https://github.com/SandeepVashishtha/AI-Powered-Recruitment-Talent-Intelligence-Platform",
+  url: "https://ai-powered-recruitment-talent-intel.vercel.app/",
+  image: "/job-portal.png",
+  description:
+    "Full-stack recruitment and talent intelligence platform connecting candidates and recruiters through a modern job portal. Features secure authentication, job discovery and filtering, candidate dashboards, profile management, resume uploads with Cloudinary, recruiter workflows, and role-based access. The platform is designed to support AI-driven resume analysis, semantic job matching, candidate ranking, and skill-gap insights, with a scalable architecture using Next.js, Express.js, PostgreSQL, and Prisma.",
+  tech: [
+    "Next.js 15",
+    "React",
+    "Node.js",
+    "Express.js",
+    "PostgreSQL",
+    "Prisma",
+    "JWT Auth",
+    "Zustand",
+    "TanStack Query",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Cloudinary",
+    "Swagger",
+    "Azure",
+    "Vercel"
   ],
+  status: "active",
+  featured: true,
+},
+  {
+    name: "Team Task Manager",
+    repo: "https://github.com/SandeepVashishtha/Team-Task-Manager",
+    url: "https://team-task-manager-sable.vercel.app/",
+    image: "/team-task-manager.png",
+    description:
+      "Full-stack team collaboration and project management platform for managing projects, tasks, team members, and deadlines. Includes JWT authentication, role-based access control, project and task management, member management, priority and status tracking, personalized dashboards, productivity insights, and REST API documentation.",
+    tech: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "JWT Auth",
+      "Swagger",
+      "Tailwind CSS",
+      "Azure",
+      "Vercel"
+    ],
+    status: "active",
+    featured: true,
+  },
+  {
+    name: "DiagramCraft",
+    repo: "https://github.com/SandeepVashishtha/DiagramCraft",
+    url: "https://diagram-craft-eight.vercel.app/",
+    image: "/diagram-craft.png",
+    description:
+      "Interactive web-based diagram editor powered by Mermaid.js, allowing users to write diagram syntax in an integrated CodeMirror editor and instantly preview the rendered result. Includes diagram templates, syntax error handling, and SVG and PNG export support for flowcharts, sequence diagrams, ER diagrams, class diagrams, Gantt charts, and more.",
+    tech: [
+      "React 19",
+      "Vite",
+      "Mermaid.js",
+      "CodeMirror",
+      "Tailwind CSS",
+      "html-to-image"
+    ],
+    status: "active",
+    featured: true,
+  },
+],
 };
 
 export default data;
